@@ -1,0 +1,216 @@
+{
+  "statistics": [
+    {
+      "id": "TVobxeKbI",
+      "qty": "1040+",
+      "status": "Satisfied Patients",
+      "groupId": "2"
+    },
+    {
+      "id": "UyEDV5Yds",
+      "qty": "500+",
+      "status": "Bed Facility",
+      "groupId": "5"
+    },
+    {
+      "id": "kLt-bJF",
+      "qty": "80+",
+      "satatus": "Available Hospitals",
+      "groupId": "1"
+    }
+  ],
+  "services": [
+    {
+      "title": "Free Checkups",
+      "description": "People need to pay attention to their bodies and go get a checkup. If you do that,you have a chance to help ilness from getting even worse",
+      "details": "Learn More"
+    },
+    {
+      "title": "24/7 Ambulance",
+      "description": "The day we learn to allow an ambulance to pass through in traffic, might be the first step towards being a truly responsible society.",
+      "details": "Learn More"
+    },
+    {
+      "title": "Expert Doctors",
+      "description": "A good physician treats the disease, the great physician treats the patient who has the disease.",
+      "details": "Learn More"
+    },
+    {
+      "title": "Medicines",
+      "description": "Laws of the House of God. The delivery of good medical care is to do as much nothing as possible.",
+      "details": "Learn More"
+    },
+    {
+      "title": "Bed Facility",
+      "description": "Comfort is top priority and we ensure our patients to feel as they are in their house not in a hospital ",
+      "details": "Learn More"
+    },
+    {
+      "title": "Total Care",
+      "description": "We are here to provide affordable care and access to our high quality service",
+      "details": "Learn More"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "hh53de009",
+      "name": "Brad Gibson",
+      "category": "cardiology",
+      "email": "brad@gmail.com",
+      "title": "cardiolog",
+      "mobile": "9876546787",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0g8R5VmgqDqpRCwQfw2Y9V-DM-iXS59R9hQ&usqp=CAU"
+    },
+    {
+      "id": "aeddw342w2",
+      "name": "Glenda Kim",
+      "category": "surgery",
+      "email": "glenda@gmail.com",
+      "title": "head surgeon",
+      "mobile": "245345254363424",
+      "photo": "https://www.kindpng.com/picc/m/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png"
+    },
+    {
+      "id": "efqf354343143e",
+      "name": "Vladeen Min",
+      "category": "nursery",
+      "email": "vladeen@gmail.com",
+      "title": "nurse",
+      "mobile": "9876546787",
+      "photo": "https://png.pngtree.com/png-clipart/20190922/original/pngtree-business-male-user-avatar-vector-png-image_4774078.jpg"
+    },
+    {
+      "id": "kLt-bJF",
+      "name": "Tom Archey",
+      "category": "pysician",
+      "email": "toman@gmail.com",
+      "title": "pysician",
+      "mobile": "9090909090",
+      "photo": "https://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/User-icon.png"
+    },
+    {
+      "id": "kLt354235F",
+      "name": "Jessica Watson",
+      "category": "Allergy",
+      "email": "watson@gmail.com",
+      "title": "Allergists",
+      "mobile": "9090909090",
+      "photo": "https://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/User-icon.png"
+    },
+    {
+      "id": "kLtrr53465632",
+      "name": "Peter Yang",
+      "category": "traumatology",
+      "email": "Yang@gmail.com",
+      "title": "traumatolog",
+      "mobile": "4523235654",
+      "photo": "https://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/User-icon.png"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Monica",
+      "opinion": "Recently visited health check up department of Carely Hospital for a whole body check up. The entire process from check in to the end was seamless. The staff at the health check department was courteous, helpful and very attentive. I would highly recommend this hospital to anyone looking for something similar services"
+    },
+    {
+      "name": "Bob",
+      "opinion": "Dr Jessica Watson: We met Dr  Jessica Watson last month with severe cough and sputum for my father Dr Varaprasad. His way of handling patients is excellent and so soothing that the patient feels immensely confident about recovery. Thanks to Dr. Jessica, within 2 weeks, he is completely normal"
+    },
+    {
+      "name": "Monica",
+      "opinion": "n Carely hospital Dr.Tom Archey  at reception people Mr.Harry helping to patients excelent way of speaking Guidense.. I felt very Happy with this people.. I strongly recommend to my Friends n Relatives to this Curely Hospital"
+    }
+  ],
+  "blogs": [
+    {
+      "blog1": {
+        "date": "1st May, 2019",
+        "blogger": "By Patient",
+        "title": "Research",
+        "description": "A valuable compendium of innovative research topics, medical success stories, reporting on cutting edge medical technology, and inspiring stories, the has something special. "
+      },
+      "blog2": {
+        "date": "3rd Dec, 2022",
+        "blogger": "By Garry",
+        "title": "educational blog",
+        "description": "Equal parts education and inspiring, 'HealthHub' not only chronicles the goings-on at Brigham and Women’s, but frequently delves into innovative research and offers helpful, explanatory advice"
+      },
+      "blog3": {
+        "date": "18th Oct, 2021",
+        "blogger": "By Jessica",
+        "title": "Crozer",
+        "description": "The official blog of the Crozer Keystone Health System, 'Healthbeat' gives helpful, up-to-date coverage on wellness tips, engagement with the local community, family advice, and general medical topics"
+      }
+    }
+  ],
+  "footer": [
+    {
+      "links": [
+        "Home",
+        "Services",
+        "About",
+        "Doctors",
+        "Book",
+        "Review",
+        "Blogs"
+      ],
+      "Services": [
+        "Dentsl Care",
+        "Message Therapy",
+        "Cardioloty",
+        "Diagnosis",
+        "Ambulance Service"
+      ],
+      "Contact info": [
+        "+123-45-67",
+        "445-67-890",
+        "Curely@gmail.com",
+        "helpcurely@gmail.com",
+        "Oclahoma",
+        "US-40023"
+      ],
+      "follow": [
+        "Facebook",
+        "Twitter",
+        "Blog Posts",
+        "Instagram",
+        "Linkedin",
+        "Pinterest"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Colleague"
+    },
+    {
+      "id": "2",
+      "name": "Friend"
+    },
+    {
+      "id": "4",
+      "name": "Service"
+    },
+    {
+      "id": "5",
+      "name": "Community"
+    },
+    {
+      "id": "6",
+      "name": "Social"
+    },
+    {
+      "id": "Mnj_zdF"
+    },
+    {
+      "id": "TmGj5Wt"
+    },
+    {
+      "id": "a40We2h"
+    },
+    {
+      "id": "TBc3kZq"
+    }
+  ]
+}
