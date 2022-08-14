@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  overflow-x: hidden;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.image img {
+  animation: img;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+@keyframes img {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+.content h1 {
+  animation: header;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  position: relative;
+  animation-delay: 1s;
+  left: 800px;
+}
+@keyframes header {
+  0% {
+    left: 800px;
+  }
+  100% {
+    left: 0;
+  }
+}
+.content .text-block {
+  animation: text;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  position: relative;
+  animation-delay: 3s;
+  opacity: 0;
+}
+@keyframes text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.button {
+  animation: button;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
+  opacity: 0;
+}
+@keyframes button {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
