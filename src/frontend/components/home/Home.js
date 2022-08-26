@@ -2,7 +2,7 @@ import React from 'react';
 import doctor from '../assets/images/doctor3.png'
 function Home(props) {
     return (
-        <div className='container m-auto sm:flex-col sm: items-center sm:pt4 sm:pt-10 sm:justify-center md:flex-column lg:flex-row  pt-32 flex lg:justify-between lg:items-center'>
+        <div className='container m-auto sm:flex-col sm: items-center  sm:pt-10 sm:justify-center md:flex-column lg:flex-row  lg:pt-40 flex lg:justify-between lg:items-center'>
             <div className='image sm:w-56 lg:w-96 '>
                 <img src={doctor} alt="not found" className="lg:h-96  bg-white sm:object-contain  " />
             </div>

@@ -13,6 +13,7 @@ function SliderImg(props) {
         autoplay: true,
         autoplaySpeed: 5000,
         cssEase: "linear",
+        arrows:false,
         responsive: [
             {
                 breakpoint: 1024,
@@ -20,7 +21,7 @@ function SliderImg(props) {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -28,21 +29,22 @@ function SliderImg(props) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    initialSlide: 1
+                    initialSlide: 1,
+                    dots:false,
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    dots:false,
                 }
             }
         ]
     };
     return (
-        <div >
-            <Slider {...settings}>
+            <Slider {...settings} className="-z-10">
                 <div>
                     <img src={slider1} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
                 </div>
@@ -55,9 +57,7 @@ function SliderImg(props) {
                 <div>
                     <img src={slider4} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
                 </div>
-
             </Slider>
-        </div>
     );
 }
 

@@ -9,4 +9,16 @@ export class fetchData {
         let dataURL = `${this.serverURL}/statistics`
         return axios.get(dataURL)
     }
+    static getAllDoctors() {
+        let dataURL = `${this.serverURL}/doctors`
+        return axios.get(dataURL)
+    }
+    static getAllReviews() {
+        let dataURL = `${this.serverURL}/reviews`
+        return axios.get(dataURL)
+    }
+    static getAllBlogs() {
+        let dataURL = `${this.serverURL}/blogs`
+        return axios.get(dataURL)
+    }
 }

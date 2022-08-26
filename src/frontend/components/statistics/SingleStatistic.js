@@ -1,39 +1,16 @@
 import React from 'react';
-function SingleStatistic(props) {
+function SingleStatistic({ qty, status, icon }) {
     return (
-        <div className=' grid gap-3 grid-cols-4 items-center  mb-8 justfy-center'>
-            <div className="card w-20 h-20 bg-teal-400  ">
+        <React.Fragment>
+            <div className="card lg:w-20 lg:h-24 sm:w-80 sm:m-auto sm:shadow-md sm:h-72 md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:-translate-y-2 transition-all bg-white ">
                 <div className="logo">
-                    <i className='fas fa-user-md'>
+                    <i className={`${icon} text-7xl text-cyan-400 pt-4`}>
                     </i>
                 </div>
-                <h1></h1>
+                <h1 className='lg:text-6xl md:text-3xl sm:text-3xl pt-3 font-semibold'>{qty}</h1>
+                <h3 className='lg:text-3xl md:text-xl sm:text-xl pt-3 opacity-60 '>{status}</h3>
             </div>
-            <div className="card">
-                <div className="logo">
-                    <i className='fas fa-users'>
-                    </i>
-                </div>
-                <h1>140+</h1>
-                <h3>doctors at work</h3>
-            </div>
-            <div className="card">
-                <div className="logo">
-                    <i className='fas fa-procedures'>
-                    </i>
-                </div>
-                <h1>140+</h1>
-                <h3>doctors at work</h3>
-            </div>
-            <div className="card">
-                <div className="logo">
-                    <i className='fas fa-hospital'>
-                    </i>
-                </div>
-                <h1>140+</h1>
-                <h3>doctors at work</h3>
-            </div>
-        </div>
+        </React.Fragment>
     );
 }
 

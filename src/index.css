@@ -18,6 +18,7 @@ html {
     left: 0px;
   }
 }
+
 .content h1 {
   animation: header;
   animation-duration: 2s;
@@ -64,4 +65,67 @@ html {
   100% {
     opacity: 1;
   }
+}
+
+/* services section */
+.bg-border {
+  border-radius: 15% 15% 0 0;
+}
+@media (min-width: 976px) {
+  .card {
+    border-radius: 27% 73% 27% 73% / 100% 0% 100% 0% !important;
+  }
+  .statistic-container {
+    padding-bottom: 0 !important;
+  }
+  .bg-border {
+    border-radius: 15% 15% 0 0;
+  }
+}
+@media (min-width: 768px) {
+  .card {
+    border-radius: 27% 73% 27% 73% / 100% 0% 100% 0% !important;
+  }
+  .statistic-container {
+    padding-bottom: 40rem;
+  }
+  .bg-border {
+    border-radius: 5% 5% 0 0;
+  }
+}
+@media (min-width: 280px) and (max-width: 767px) {
+  .statistic-container {
+    padding-bottom: 55rem;
+  }
+  .card {
+    border-radius: 1rem;
+  }
+  .bg-border {
+    border-radius: 0;
+  }
+}
+.singleCard {
+  padding-bottom: 26rem;
+  max-height: 28rem;
+}
+
+.card-img {
+  border-bottom-left-radius: 7rem;
+  border-bottom-right-radius: 7rem;
+}
+
+.review-card {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  width: 100%;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+ul > li {
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+ul > li:hover {
+  transform: translateX(6px);
 }
