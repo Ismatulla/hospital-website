@@ -4,7 +4,7 @@ import slider1 from '../assets/images/slider-2.avif'
 import slider2 from '../assets/images/slider-4.avif'
 import slider3 from '../assets/images/slider-5.avif'
 import slider4 from '../assets/images/slider-6.avif'
-function SliderImg(props) {
+function SliderImg() {
     const settings = {
         infinite: true,
         speed: 500,
@@ -19,6 +19,15 @@ function SliderImg(props) {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow:2,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: false

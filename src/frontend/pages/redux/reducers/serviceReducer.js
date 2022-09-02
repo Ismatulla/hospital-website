@@ -1,4 +1,11 @@
-import { SERVICE_AVAILABLE, GET_STATISTICS, GET_DOCTORS, GET_REVIEWS, GET_BLOGS } from "../actions/actionType"
+import {
+    SERVICE_AVAILABLE,
+    GET_STATISTICS,
+    GET_DOCTORS,
+    GET_REVIEWS,
+    GET_BLOGS
+} from "../actions/actionType"
+
 let INITIAL_STATE = {
     service: [],
     statistics: [],
@@ -6,6 +13,7 @@ let INITIAL_STATE = {
     reviews: [],
     blogs: [],
 }
+
 const serviceReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SERVICE_AVAILABLE:
@@ -36,6 +44,6 @@ const serviceReducer = (state = INITIAL_STATE, action) => {
         default:
             return state
     }
-
 }
+
 export default serviceReducer

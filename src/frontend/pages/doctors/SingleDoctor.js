@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SingleDoctor({ facebook, instagram, linkedIn, photo, name, twitter, category, title }) {
+function SingleDoctor({ facebook, instagram, linkedIn, photo, name, twitter, title }) {
     return (
         <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl lg:max-w-xs sm:w-80 sm:m-auto sm:shadow-md  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:shadow-inner transition-all bg-white pb-96 singleCard object-cover bg-cyan-100'>
             <div className='w-full pb-0 lg:rounded-t-xl sm:rounded-t-xl md:rounded-t-xl '>

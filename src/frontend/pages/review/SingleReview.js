@@ -3,7 +3,7 @@ import React from 'react';
 function SingleReview({ name, opinion, photo }) {
     return (
         <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl  sm:w-80 sm:m-auto  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center   cursor-pointer  transition-all bg-white singleCard border-2 border-cyan-400 lg:max-w-ms xl:max-w-ms'>
-            <div className='review-card bg-cyan-400'>
+            <div className='review-card bg-cyan-400 '>
                 <div className='w-full pb-0 h-25  flex justify-center items-center   '>
                     <img src={photo} alt="" className='w-32 h-32 object-cover   rounded-full mt-6 border-8 border-cyan-700 z-1' />
                 </div>

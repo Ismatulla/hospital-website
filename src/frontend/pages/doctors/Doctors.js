@@ -2,12 +2,16 @@ import React, { useEffect } from 'react';
 import SingleDoctor from './SingleDoctor';
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchAllDoctors } from '../redux/actions';
-function Doctors(props) {
+
+function Doctors() {
+
     const { doctors } = useSelector(state => state.serviceState)
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(fetchAllDoctors())
     }, [])
+    
     return (
         <div className='my-36 lg:mx-36 md:mx-30 sm:mx-0' >
             <h1 className=' pb-16 lg:text-6xl sm:text-3xl font-bold text-center block'>

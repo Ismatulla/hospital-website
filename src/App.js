@@ -1,16 +1,17 @@
-import Header from "./frontend//components/header/Header";
-import Home from "./frontend/components/home/Home";
+import Header from "./frontend/pages/header/Header";
+import Home from "./frontend/pages/home/Home";
 import { Routes, Route } from 'react-router-dom'
 import '/node_modules/slick-carousel/slick/slick.css'
 import '/node_modules/slick-carousel/slick/slick-theme.css'
-import Services from "./frontend/components/services/Services";
-import About from "./frontend/components/about/About";
-import Book from "./frontend/components/book/Book";
-import Reviews from "./frontend/components/review/Reviews";
-import Blogs from "./frontend/components/blogs/Blogs";
-import Doctors from "./frontend/components/doctors/Doctors";
-import Footer from "./frontend/components/footer/Footer";
+import Services from "./frontend/pages/services/Services";
+import About from "./frontend/pages/about/About";
+import Book from "./frontend/pages/book/Book";
+import Reviews from "./frontend/pages/review/Reviews";
+import Blogs from "./frontend/pages/blogs/Blogs";
+import Doctors from "./frontend/pages/doctors/Doctors";
+import Footer from "./frontend/pages/footer/Footer";
 //import Statistics from "./frontend/components/statistics/Statistics";
+
 function App() {
   return (
     <div className="App ">

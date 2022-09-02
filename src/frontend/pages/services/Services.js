@@ -4,12 +4,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchServices } from '../redux/actions';
 import Statistics from '../statistics/Statistics'
 import SingleService from './SingleService';
-function Services(props) {
+
+function Services() {
     const { service } = useSelector(state => state.serviceState)
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(fetchServices())
     }, [])
+    
     return (
         <div className='flex flex-col justify-center '>
             <div>
@@ -25,12 +28,13 @@ function Services(props) {
                 </h1>
                 <div className='grid xl:grid-cols-3  lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8 items-center justify-center'>
                     {
-                        service.map(s => (
+                        service.map((s,idx) => (
                             <SingleService
                                 key={s.title}
                                 title={s.title}
                                 description={s.description}
                                 details={s.details}
+                                idx={idx}
                             />
                         ))
                     }

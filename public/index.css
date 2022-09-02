@@ -1355,8 +1355,9 @@ html {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   width: 100%;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border:none;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 ul > li {
@@ -1444,6 +1445,10 @@ ul > li:hover {
     margin-bottom: 2rem;
   }
 
+  .sm\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .sm\:mt-0 {
     margin-top: 0px;
   }
@@ -1462,6 +1467,10 @@ ul > li:hover {
 
   .sm\:h-20 {
     height: 5rem;
+  }
+
+  .sm\:h-48 {
+    height: 12rem;
   }
 
   .sm\:h-72 {
@@ -1616,6 +1625,14 @@ ul > li:hover {
     margin-bottom: 2rem;
   }
 
+  .md\:mt-12 {
+    margin-top: 3rem;
+  }
+
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1626,6 +1643,10 @@ ul > li:hover {
 
   .md\:h-48 {
     height: 12rem;
+  }
+
+  .md\:h-44 {
+    height: 11rem;
   }
 
   .md\:w-full {
@@ -1748,6 +1769,10 @@ ul > li:hover {
 
   .lg\:h-96 {
     height: 24rem;
+  }
+
+  .lg\:h-40 {
+    height: 10rem;
   }
 
   .lg\:h-24 {
@@ -1911,6 +1936,10 @@ ul > li:hover {
 @media (min-width: 1240px) {
   .xl\:m-auto {
     margin: auto;
+  }
+
+  .xl\:h-40 {
+    height: 10rem;
   }
 
   .xl\:w-1\/2 {
