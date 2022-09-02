@@ -16,7 +16,7 @@ function Statistics(props) {
                     <SingleStatistic
                         key={statistic.id}
                         qty={statistic.qty}
-                        status={statistic.status}
+                         status={statistic.status}
                         icon={statistic.icon}
                     />
                 ))
