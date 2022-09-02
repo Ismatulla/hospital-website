@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../components/Button';
 
 function Book(props) {
   return (
@@ -15,11 +16,7 @@ function Book(props) {
         <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your number" type="tel" name="search" required />
         <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" type="date" name="search" required/>
         <div>
-          <button type="submit" className='transition-all  text-cyan-400 border-cyan-400 border-2 xl:px-12 py-4 md:px-8 md:py-4 sm:px-8 sm:py-4   hover:bg-cyan-400 hover:text-white
-                rounded-md text-xl lg:mb-6 md:mb-8 
-                sm:mb-8 sm:inline-block mt-8 sm:text-center '>Book Now <span className='fas fa-chevron-right pl-4  '>
-            </span>
-          </button>
+        <Button text="Book Now"/>
         </div>
       </form>
     </div>

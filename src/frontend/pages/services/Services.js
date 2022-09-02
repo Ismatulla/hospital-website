@@ -6,18 +6,18 @@ import Statistics from '../statistics/Statistics'
 import SingleService from './SingleService';
 
 function Services() {
+    
     const { service } = useSelector(state => state.serviceState)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchServices())
     }, [])
-    
+
     return (
         <div className='flex flex-col justify-center '>
             <div>
                 <SliderImg />
-
             </div>
             <div className=' lg:min-h-full  md:h-48 statistic-container'>
                 <Statistics />

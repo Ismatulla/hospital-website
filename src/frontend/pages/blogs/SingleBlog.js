@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../components/Button';
 
 function SingleBlog({ description, blogger, title, date, image }) {
     return (
@@ -15,12 +16,7 @@ function SingleBlog({ description, blogger, title, date, image }) {
                     <h1 className='text-2xl text-cyan-400 block pb-2'>{title}</h1>
                     <p>{description}</p>
                     <div className='mt-6 flex xl:justify-start lg:justify-start md:justify=center sm:justify-center sm:items-center'>
-                        <button className='transition-all  text-cyan-400 border-cyan-400 border-2 px-6 py-2    hover:bg-cyan-400 hover:text-white
-                rounded-md text-xl lg:mb-6 md:mb-8 
-                sm:mb-8 sm:inline-block
-                 '>Learn More <span className='fas fa-chevron-right pl-4  '>
-                            </span>
-                        </button>
+                    <Button/>
                     </div>
                 </div>
             </div>

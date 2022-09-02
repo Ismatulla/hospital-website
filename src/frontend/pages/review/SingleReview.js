@@ -1,7 +1,6 @@
 import React from 'react';
 
-function SingleReview({ name, opinion, photo }) {
-    return (
+const SingleReview=({ name, opinion, photo })=>(
         <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl  sm:w-80 sm:m-auto  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center   cursor-pointer  transition-all bg-white singleCard border-2 border-cyan-400 lg:max-w-ms xl:max-w-ms'>
             <div className='review-card bg-cyan-400 '>
                 <div className='w-full pb-0 h-25  flex justify-center items-center   '>
@@ -21,6 +20,4 @@ function SingleReview({ name, opinion, photo }) {
             </div>
         </div>
     );
-}
-
 export default SingleReview;

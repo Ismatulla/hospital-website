@@ -1,9 +1,6 @@
-import React from 'react';
-
-function SingleFooter() {
-	return (
+const SingleFooter=()=> (
 		<>
-			<div className='services flex justify-between flex-col items-center'>
+			<div className=' flex justify-between flex-col items-center'>
 				<h1 className='text-2xl font-semibold text-cyan-700  mb-4'>Our Services</h1>
 				<ul className='flex flex-col gap-y-3'>
 					<li>Dental Care</li>
@@ -13,7 +10,7 @@ function SingleFooter() {
 					<li>Ambulance </li>
 				</ul>
 			</div>
-			<div className='contact flex justify-between flex-col items-center '>
+			<div className=' flex justify-between flex-col items-center '>
 				<h1 className='text-2xl font-semibold text-cyan-700  mb-4'>Contact Info</h1>
 				<ul className='flex flex-col gap-y-3'>
 					<li>
@@ -67,28 +64,22 @@ function SingleFooter() {
 						<span className='px-2 inline-block'>
 							<i className="fa-brands fa-linkedin-in"></i>
 						</span>
-
 						LinkedIn
 					</li>
 					<li>
 						<span className='px-2 inline-block'>
 							<i className="fa-brands fa-instagram"></i>
 						</span>
-
 						Instagram
 					</li>
 					<li>
 						<span className='px-2 inline-block'>
 							<i className="fa-brands fa-pinterest"></i>
 						</span>
-
 						Pinterest
 					</li>
-
 				</ul>
 			</div>
 		</>
 	);
-}
-
 export default SingleFooter;

@@ -18,7 +18,6 @@ function Statistics(props) {
                         qty={statistic.qty}
                         status={statistic.status}
                         icon={statistic.icon}
-
                     />
                 ))
             }

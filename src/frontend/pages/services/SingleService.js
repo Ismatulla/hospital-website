@@ -1,7 +1,10 @@
 import React from 'react';
+import Button from '../../components/Button';
+
 function SingleService({ title, description, details,idx }) {
+
     const fonts=['fas fa-notes-medical','fa-solid fa-truck-medical','fa-solid fa-user-doctor','fa-solid fa-pills','fa-solid fa-bed-pulse','fa-solid fa-heart-pulse']
-    
+
     return (
         <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl lg:max-w-xs sm:w-80 sm:m-auto sm:shadow-md  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:shadow-inner transition-all bg-white pb-96 singleCard object-cover'>
             <div >
@@ -13,12 +16,7 @@ function SingleService({ title, description, details,idx }) {
                     <p className='px-10 py-8 leading-7 block w-full  '>{description}</p>
                 </div>
                 <div>
-                    <button className='transition-all  text-cyan-400 border-cyan-400 border-2 px-12 py-4    hover:bg-cyan-400 hover:text-white
-                rounded-md text-xl lg:mb-6 md:mb-8 
-                sm:mb-8 sm:inline-block
-                 '>{details} <span className='fas fa-chevron-right pl-4  '>
-                        </span>
-                    </button>
+                   <Button text={details}/>
                 </div>
             </div>
         </div>
