@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from '../../components/Button';
 
-function SingleBlog({ description, blogger, title, date, image }) {
-    return (
+const SingleBlog=({ description, blogger, title, date, image })=>(
         <div className='border-2 border-cyan-400 rounded-xl'>
             <div className='p-6'>
                 <div className='mb-6'>
@@ -22,6 +21,5 @@ function SingleBlog({ description, blogger, title, date, image }) {
             </div>
         </div>
     );
-}
 
 export default SingleBlog;

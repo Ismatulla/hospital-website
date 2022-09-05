@@ -6,7 +6,7 @@ import Statistics from '../statistics/Statistics'
 import SingleService from './SingleService';
 
 function Services() {
-    
+
     const { service } = useSelector(state => state.serviceState)
     const dispatch = useDispatch()
 
@@ -28,7 +28,7 @@ function Services() {
                 </h1>
                 <div className='grid xl:grid-cols-3  lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8 items-center justify-center'>
                     {
-                        service.map((s,idx) => (
+                        service.map((s, idx) => (
                             <SingleService
                                 key={s.title}
                                 title={s.title}

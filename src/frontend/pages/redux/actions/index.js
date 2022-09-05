@@ -1,4 +1,4 @@
-import { SERVICE_AVAILABLE, GET_STATISTICS, GET_DOCTORS, GET_REVIEWS, GET_BLOGS,  } from "./actionType";
+import { SERVICE_AVAILABLE, GET_STATISTICS, GET_DOCTORS, GET_REVIEWS, GET_BLOGS } from "./actionType";
 import { fetchData } from "../../../../backend/fetchData";
 export const getService = (payload) => ({
     type: SERVICE_AVAILABLE,

@@ -612,6 +612,14 @@ video {
   left: 0px;
 }
 
+.top-6 {
+  top: 1.5rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -643,16 +651,16 @@ video {
   margin-bottom: 9rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-28 {
   margin-top: 7rem;
 }
 
 .mb-20 {
   margin-bottom: 5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .mb-24 {
@@ -681,10 +689,6 @@ video {
 
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .block {
@@ -836,12 +840,12 @@ video {
   white-space: nowrap;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-xl {
@@ -852,12 +856,12 @@ video {
   border-radius: 9999px;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-8 {
@@ -912,9 +916,9 @@ video {
   padding-bottom: 1rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .py-2 {
@@ -925,16 +929,6 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .px-20 {
@@ -952,16 +946,21 @@ video {
   padding-bottom: 8rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .pb-16 {
   padding-bottom: 4rem;
 }
 
 .pb-8 {
   padding-bottom: 2rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
 }
 
 .pb-2 {
@@ -1113,12 +1112,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .brightness-50 {
   --tw-brightness: brightness(.5);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1147,22 +1140,18 @@ video {
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
-.transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, -webkit-text-decoration-color, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-html {
-  overflow-x: hidden;
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, -webkit-text-decoration-color, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .image img {
@@ -1193,6 +1182,14 @@ html {
   100% {
     left: 0px;
   }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .content h1 {
@@ -1313,7 +1310,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 975px) {
   .card {
     border-radius: 27% 73% 27% 73% / 100% 0% 100% 0% !important;
   }
@@ -1324,6 +1321,37 @@ html {
 
   .bg-border {
     border-radius: 5% 5% 0 0;
+  }
+
+  .responsive-header {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 65vh;
+    top: 5rem;
+    padding: 2rem 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+
+  .toggleHeading {
+    -webkit-transform: translateX(120%);
+            transform: translateX(120%);
+  }
+
+  .removeHeading {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  .responsive-header .link {
+    border-bottom: 1px solid #fff;
+    color: #fff;
   }
 }
 
@@ -1338,6 +1366,37 @@ html {
 
   .bg-border {
     border-radius: 0;
+  }
+
+  .responsive-header {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 65vh;
+    top: 5rem;
+    padding: 2rem 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+
+  .toggleHeading {
+    -webkit-transform: translateX(120%);
+            transform: translateX(120%);
+  }
+
+  .removeHeading {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  .responsive-header .link {
+    border-bottom: 1px solid #fff;
+    color: #fff;
   }
 }
 
@@ -1355,7 +1414,7 @@ html {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   width: 100%;
-  border:none;
+  border: none;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
@@ -1416,12 +1475,6 @@ ul > li:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:shadow-none:hover {
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1437,12 +1490,12 @@ ul > li:hover {
     margin-right: 0px;
   }
 
-  .sm\:mt-4 {
-    margin-top: 1rem;
-  }
-
   .sm\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .sm\:mt-4 {
+    margin-top: 1rem;
   }
 
   .sm\:mt-20 {
@@ -1459,10 +1512,6 @@ ul > li:hover {
 
   .sm\:flex {
     display: flex;
-  }
-
-  .sm\:hidden {
-    display: none;
   }
 
   .sm\:h-20 {
@@ -1545,11 +1594,6 @@ ul > li:hover {
     padding-right: 2rem;
   }
 
-  .sm\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .sm\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -1617,12 +1661,12 @@ ul > li:hover {
     margin: auto;
   }
 
-  .md\:mt-8 {
-    margin-top: 2rem;
-  }
-
   .md\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
   }
 
   .md\:mt-12 {
@@ -1693,11 +1737,6 @@ ul > li:hover {
     padding-right: 2rem;
   }
 
-  .md\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .md\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -1739,16 +1778,12 @@ ul > li:hover {
     margin-right: 9rem;
   }
 
-  .lg\:mt-0 {
-    margin-top: 0px;
-  }
-
   .lg\:mb-6 {
     margin-bottom: 1.5rem;
   }
 
-  .lg\:mb-0 {
-    margin-bottom: 0px;
+  .lg\:mt-0 {
+    margin-top: 0px;
   }
 
   .lg\:-mt-32 {
@@ -1761,6 +1796,10 @@ ul > li:hover {
 
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:h-20 {
@@ -1936,6 +1975,10 @@ ul > li:hover {
 @media (min-width: 1240px) {
   .xl\:m-auto {
     margin: auto;
+  }
+
+  .xl\:hidden {
+    display: none;
   }
 
   .xl\:h-40 {

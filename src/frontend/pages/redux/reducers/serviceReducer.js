@@ -3,7 +3,7 @@ import {
     GET_STATISTICS,
     GET_DOCTORS,
     GET_REVIEWS,
-    GET_BLOGS
+    GET_BLOGS,
 } from "../actions/actionType"
 
 let INITIAL_STATE = {

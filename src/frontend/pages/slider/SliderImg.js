@@ -52,6 +52,7 @@ function SliderImg() {
             }
         ]
     };
+
     return (
             <Slider {...settings} className="-z-10">
                 <div>

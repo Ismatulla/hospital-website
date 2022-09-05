@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from '../../components/Button';
 
-function Book(props) {
-  return (
+const Book=()=>(
     <div className=' mt-24 mb-8 '>
       <div className='text-center my-12'>
         <h1 className=' pb-16 lg:text-6xl sm:text-3xl font-bold text-center block'>
@@ -21,6 +20,5 @@ function Book(props) {
       </form>
     </div>
   );
-}
 
 export default Book;

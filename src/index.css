@@ -1,9 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html {
-  overflow-x: hidden;
-}
+
 .image img {
   animation: img;
   animation-duration: 2s;
@@ -18,7 +16,12 @@ html {
     left: 0px;
   }
 }
-
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
 .content h1 {
   animation: header;
   animation-duration: 2s;
@@ -82,7 +85,7 @@ html {
     border-radius: 15% 15% 0 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 975px) {
   .card {
     border-radius: 27% 73% 27% 73% / 100% 0% 100% 0% !important;
   }
@@ -91,6 +94,29 @@ html {
   }
   .bg-border {
     border-radius: 5% 5% 0 0;
+  }
+  .responsive-header {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 65vh;
+    top: 5rem;
+    padding: 2rem 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+  .toggleHeading {
+    transform: translateX(120%);
+  }
+  .removeHeading {
+    transform: translateX(0);
+  }
+  .responsive-header .link {
+    border-bottom: 1px solid #fff;
+    color: #fff;
   }
 }
 @media (min-width: 280px) and (max-width: 767px) {
@@ -102,6 +128,29 @@ html {
   }
   .bg-border {
     border-radius: 0;
+  }
+  .responsive-header {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 65vh;
+    top: 5rem;
+    padding: 2rem 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+  .toggleHeading {
+    transform: translateX(120%);
+  }
+  .removeHeading {
+    transform: translateX(0);
+  }
+  .responsive-header .link {
+    border-bottom: 1px solid #fff;
+    color: #fff;
   }
 }
 .singleCard {
@@ -118,7 +167,7 @@ html {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   width: 100%;
-  border:none;
+  border: none;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
@@ -130,3 +179,4 @@ ul > li {
 ul > li:hover {
   transform: translateX(6px);
 }
+

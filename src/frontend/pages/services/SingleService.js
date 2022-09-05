@@ -1,14 +1,15 @@
 import React from 'react';
 import Button from '../../components/Button';
+import ServiceFonts from './ServiceFonts';
 
-function SingleService({ title, description, details,idx }) {
+function SingleService(props) {
 
-    const fonts=['fas fa-notes-medical','fa-solid fa-truck-medical','fa-solid fa-user-doctor','fa-solid fa-pills','fa-solid fa-bed-pulse','fa-solid fa-heart-pulse']
+    const {title,description,details,idx} = props
 
     return (
-        <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl lg:max-w-xs sm:w-80 sm:m-auto sm:shadow-md  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:shadow-inner transition-all bg-white pb-96 singleCard object-cover'>
+        <div className='rounded-xl  lg:max-w-xs sm:w-80 sm:m-auto sm:shadow-md  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:shadow-inner transition-all bg-white pb-96 singleCard object-cover'>
             <div >
-                <i className={`${fonts[idx]} text-7xl text-cyan-400 pt-6`}></i>
+                <i className={`${ServiceFonts[idx]} text-7xl text-cyan-400 pt-6`}></i>
             </div>
             <h1 className='lg:text-4xl md:text-3xl sm:text-3xl pt-3 font-semibold'>{title}</h1>
             <div className='flex flex-col justify-between min-h-full'>
