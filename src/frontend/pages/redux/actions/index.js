@@ -1,4 +1,4 @@
-import { SERVICE_AVAILABLE, GET_STATISTICS, GET_DOCTORS, GET_REVIEWS, GET_BLOGS } from "./actionType";
+import { SERVICE_AVAILABLE, GET_STATISTICS, GET_DOCTORS, GET_REVIEWS, GET_BLOGS, TOGGLE_NAVBAR } from "./actionType";
 import { fetchData } from "../../../../backend/fetchData";
 export const getService = (payload) => ({
     type: SERVICE_AVAILABLE,
@@ -19,6 +19,10 @@ export const getReviews = (payload) => ({
 export const getBlogs = (payload) => ({
     type: GET_BLOGS,
     blogs: payload
+})
+export const getNavbar = (payload) => ({
+    type: TOGGLE_NAVBAR,
+    navbar: payload
 })
 export const fetchServices = () => {
     return async (dispatch) => {
@@ -73,6 +77,11 @@ export const fetchAllBlogs = () => {
         } catch (err) {
             console.log(err);
         }
+    }
+}
+export const fetchNavbar = () => {
+    return (dispatch) => {
+        dispatch(getNavbar(false))
     }
 }
 

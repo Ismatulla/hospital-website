@@ -1430,6 +1430,13 @@ ul > li:hover {
           transform: translateX(6px);
 }
 
+.error-text{
+  color: crimson;
+  margin-top: -2rem;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
 .placeholder\:italic::-webkit-input-placeholder {
   font-style: italic;
 }
@@ -1918,10 +1925,6 @@ ul > li:hover {
 
   .lg\:pt-0 {
     padding-top: 0px;
-  }
-
-  .lg\:pt-40 {
-    padding-top: 10rem;
   }
 
   .lg\:text-left {

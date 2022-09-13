@@ -180,3 +180,10 @@ ul > li:hover {
   transform: translateX(6px);
 }
 
+.error-text{
+color: crimson;
+margin-top: -2rem;
+font-size: 1.2rem;
+text-align: left;
+
+}

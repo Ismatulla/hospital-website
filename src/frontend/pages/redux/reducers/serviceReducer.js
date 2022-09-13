@@ -4,6 +4,7 @@ import {
     GET_DOCTORS,
     GET_REVIEWS,
     GET_BLOGS,
+    TOGGLE_NAVBAR
 } from "../actions/actionType"
 
 let INITIAL_STATE = {
@@ -12,6 +13,7 @@ let INITIAL_STATE = {
     doctors: [],
     reviews: [],
     blogs: [],
+    navbar:false
 }
 
 const serviceReducer = (state = INITIAL_STATE, action) => {
@@ -41,6 +43,11 @@ const serviceReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 blogs: action.blogs
             }
+            case TOGGLE_NAVBAR:
+                return {
+                    ...state,
+                    navbar:action.navbar
+                }
         default:
             return state
     }

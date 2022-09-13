@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import hospitalLogo from '../assets/images/hospital.png'
 import { Link } from 'react-router-dom';
 import HeaderList from './HeaderList';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchNavbar } from '../redux/actions';
 
 const Header = () => {
-    
+     
+    const { navbar } = useSelector(state => state.serviceState)
+    const dispatch = useDispatch()
+
     const [toggleHeader, setToggleHeader] = useState(false)
     const handleHeader = () => {
         setToggleHeader(!toggleHeader)
     }
+
     return (
         <nav className='navbar  z-50 fixed bg-white inset-0 lg:h-20 lg:shadow-xl md:shadow-md sm:h-20 sm:shadow-sm md:h-20 relative'>
             <div className=" container max-auto px-20 flex justify-between items-center min-h-full min-w-full lg:flex-row md:flex-row sm:flex-col lg:flex-row ">
