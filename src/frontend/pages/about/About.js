@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../components/Button';
 import about from '../assets/images/about-us.jpg'
 
-const About = () =>( 
+const About = () => (
     <div className='mt-28 mb-20 lg:px-10 sm:px-4 md:px-4'>
         <h1 className=' pb-16 lg:text-6xl sm:text-3xl font-bold text-center block'>
             <span className='text-cyan-400  '>ABOUT</span> US
@@ -24,7 +24,9 @@ const About = () =>(
                     Carely cares for a diverse community, born in more than 185 countries, who speak over 106 different languages and follow over 90 different religions or beliefs.
                 </p>
                 <div className=' lg:justify-start sm:w-full sm:flex sm:justify-center'>
-                    <Button/>
+                    <Button
+                        icon="fas fa-chevron-right"
+                    />
                 </div>
             </div>
         </div>

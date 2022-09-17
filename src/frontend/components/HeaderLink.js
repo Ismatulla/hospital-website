@@ -7,7 +7,7 @@ function HeaderLink(props) {
   
   return (
     <Link to={`${props.to}`}>
-      <li className='hover:text-cyan-400 transition-all cursor-pointer link '>{props.headLink}</li>
+      <li className='hover:text-cyan-400 transition-all cursor-pointer link ' onClick={props.onClick}>{props.headLink}</li>
     </Link>
   );
 };

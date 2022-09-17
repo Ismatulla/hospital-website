@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../../components/Button';
 
 const Book = () => {
@@ -9,6 +9,7 @@ const Book = () => {
   const [enteredValueIsValid, setEnteredValueIsValid] = useState(true)
   const [enteredNumberIsValid, setEnteredNumberIsValid] = useState(true)
   const [enteredDataIsValid, setEnteredDataIsValid] = useState(true)
+  const [sendForm, setSendForm] = useState(false)
 
   const validateInput = (updateState, evts, toggleState) => {
     updateState(evts.target.value)
@@ -51,13 +52,17 @@ const Book = () => {
       setEnteredDataIsValid(false)
       return
     }
+    setSendForm(true)
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => setSendForm(false), 15000)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
 
     <div className=' mt-24 mb-8 '>
-
       <div className='text-center my-12'>
         <h1 className=' pb-16 lg:text-6xl sm:text-3xl font-bold text-center block'>
           <span className='text-cyan-400 '>BOOK </span>
@@ -90,10 +95,18 @@ const Book = () => {
           className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" type="date" name="search" />
         {!enteredDataIsValid && warningMessage('date')}
         <div>
-          <Button text="Book Now" />
+          <Button
+            text="Book Now"
+            icon="fas fa-chevron-right"
+          />
         </div>
+        {sendForm && <div className='feedback-text'>
+          <p>
+            your  booking has been recorded!
+          </p>
+        </div>
+        }
       </form>
-
     </div >
   );
 }

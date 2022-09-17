@@ -84,6 +84,9 @@ body {
   .bg-border {
     border-radius: 15% 15% 0 0;
   }
+  .btn_add {
+    justify-content: flex-end;
+  }
 }
 @media (min-width: 768px) and (max-width: 975px) {
   .card {
@@ -117,6 +120,9 @@ body {
   .responsive-header .link {
     border-bottom: 1px solid #fff;
     color: #fff;
+  }
+  .btn_add {
+    justify-content: flex-end;
   }
 }
 @media (min-width: 280px) and (max-width: 767px) {
@@ -152,6 +158,9 @@ body {
     border-bottom: 1px solid #fff;
     color: #fff;
   }
+  .btn_add {
+    justify-content: center;
+  }
 }
 .singleCard {
   padding-bottom: 26rem;
@@ -180,10 +189,36 @@ ul > li:hover {
   transform: translateX(6px);
 }
 
-.error-text{
-color: crimson;
-margin-top: -2rem;
-font-size: 1.2rem;
-text-align: left;
+.error-text {
+  color: crimson;
+  margin-top: -2rem;
+  font-size: 1.2rem;
+  text-align: left;
+}
 
+.feedback-text {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in;
+  color: #22d3ee;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  margin: -2rem auto 2rem auto;
+}
+
+.not-active {
+  display: none;
+}
+.review_section {
+  width: 100%;
+}
+.btn_add {
+  width: 100%;
+  display: flex;
+}
+
+.leave_review {
+  margin: 4rem 0;
 }
