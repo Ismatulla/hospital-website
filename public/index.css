@@ -636,6 +636,11 @@ video {
   margin: auto;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -649,6 +654,11 @@ video {
 .my-36 {
   margin-top: 9rem;
   margin-bottom: 9rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mt-8 {
@@ -788,6 +798,10 @@ video {
   flex-direction: column;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .items-center {
   align-items: center;
 }
@@ -798,6 +812,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-6 {
@@ -1419,11 +1437,6 @@ body {
   .btn_add {
     justify-content: center;
   }
-}
-
-.singleCard {
-  padding-bottom: 26rem;
-  max-height: 28rem;
 }
 
 .card-img {
@@ -2066,3 +2079,4 @@ ul > li:hover {
     padding-right: 4rem;
   }
 }
+

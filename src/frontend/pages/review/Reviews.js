@@ -9,7 +9,7 @@ function Reviews() {
 
     const dispatch = useDispatch()
     const { reviews } = useSelector(state => state.serviceState)
-
+    
     useEffect(() => {
         dispatch(fetchAllReviews())
     }, [])
@@ -19,8 +19,8 @@ function Reviews() {
 
             <div className='btn_add'>
                 <Link to='/addReview'>
-                <Button text='Add Review'
-                    icon="fa-solid fa-plus" />
+                    <Button text='Add Review'
+                        icon="fa-solid fa-plus" />
                 </Link>
             </div>
 
@@ -29,11 +29,12 @@ function Reviews() {
             </h1>
             <div className=' mt-24 grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6 review-cards '>
                 {
-                    reviews.map((review, index) => (
-                        <SingleReview key={index}
+                    reviews.map((review) => (
+                        <SingleReview key={review.id}
                             name={review.name}
                             opinion={review.opinion}
                             photo={review.photo}
+                            id={review.id}
                         />
                     ))
                 }

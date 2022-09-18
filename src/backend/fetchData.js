@@ -21,9 +21,22 @@ export class fetchData {
         let dataURL = `${this.serverURL}/blogs`
         return axios.get(dataURL)
     }
+    static getSingleData(id) {
+        let dataURL = `${this.serverURL}/reviews/${id}`
+        return axios.get(dataURL)
+    }
     static postReviews(reviewData) {
         let dataURL = `${this.serverURL}/reviews`
         return axios.post(dataURL, {
+            id: reviewData.id,
+            name: reviewData.name,
+            opinion: reviewData.opinion,
+            photo: reviewData.photo
+        })
+    }
+    static putReviews(reviewData) {
+        let dataURL = `${this.serverURL}/reviews`
+        return axios.put(dataURL, {
             name: reviewData.name,
             opinion: reviewData.opinion,
             photo: reviewData.photo

@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
-import UploadImg from '../../components/UploadImg';
+import React, { useState, useId, useEffect } from 'react';
 import Button from '../../components/Button';
+import { postAallReviews } from '../redux/actions/index'
+import { useDispatch } from 'react-redux'
 
 function AddReview() {
   const [name, setName] = useState('')
   const [opinion, setOpinion] = useState('')
-
+  const [photo, setPhoto] = useState(null)
+  const dispatch = useDispatch()
+  const id = useId()
+  const random = Math.random() * 10
   const handleName = (e) => setName(e.target.value)
   const handleOpinion = (e) => setOpinion(e.target.value)
+
   const handleReview = () => {
+
     if (name.trim() === '') return
     if (opinion.trim() === '') return
+    dispatch(postAallReviews({ id: id * random, name: name, opinion: opinion, photo: photo }))
     setName('')
     setOpinion('')
+
   }
 
   return (
@@ -37,7 +45,27 @@ function AddReview() {
         />
 
         <h1 className='text-3xl text-slate-400 -mb-7'>Please upload your photo </h1>
-        <UploadImg />
+        {/* img upload */}
+        <div>
+          {photo && (
+            <div>
+              <img src={URL.createObjectURL(photo)} width={"120px"} alt="not found" />
+              <br />
+              <button onClick={() => setPhoto(null)}>Remove</button>
+            </div>
+          )}
+          <br />
+          <br />
+          <input
+            name="myImage"
+            type="file"
+            onChange={(e) => {
+              setPhoto(e.target.files[0])
+            }}
+          />
+
+        </div>
+        {/* ///////////////////////////////////////// */}
         <div>
           <Button
             text="Add it"

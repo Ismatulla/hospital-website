@@ -1,4 +1,14 @@
-import { SERVICE_AVAILABLE, GET_STATISTICS, GET_DOCTORS, GET_REVIEWS, GET_BLOGS, TOGGLE_NAVBAR } from "./actionType";
+import {
+    SERVICE_AVAILABLE,
+    GET_STATISTICS,
+    GET_DOCTORS,
+    GET_REVIEWS,
+    GET_BLOGS,
+    TOGGLE_NAVBAR,
+    POST_REVIEW,
+    PUT_REVIEW,
+    GET_SINGLE_DATA
+} from "./actionType";
 import { fetchData } from "../../../../backend/fetchData";
 export const getService = (payload) => ({
     type: SERVICE_AVAILABLE,
@@ -23,6 +33,24 @@ export const getBlogs = (payload) => ({
 export const getNavbar = (payload) => ({
     type: TOGGLE_NAVBAR,
     navbar: payload
+})
+
+const getSingleData = (payload) => ({
+    type: GET_SINGLE_DATA,
+    singleData: payload
+})
+
+// post request //
+
+export const postReview = (payload) => ({
+    type: POST_REVIEW,
+    review: payload
+})
+
+// put request//
+export const putReview = (payload) => ({
+    type: PUT_REVIEW,
+    review: payload
 })
 export const fetchServices = () => {
     return async (dispatch) => {
@@ -85,3 +113,41 @@ export const fetchNavbar = () => {
     }
 }
 
+export const fetchSingleData=(id)=>{
+    return async (dispatch)=>{
+        try{
+            const res = await fetchData.getSingleData(id)
+            if(!res.ok) new Error('single data cannot be got')
+            dispatch(getSingleData(res.data))
+        }catch(err){
+            console.log(err);
+        }
+    }
+}
+// post request//
+
+export const postAallReviews = (reviews) => {
+    return async dispatch => {
+        try {
+            const res = await fetchData.postReviews(reviews)
+            if (!res.ok) new Error('data cannot be posted')
+            dispatch(postReview(res.data))
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+// PUT REQUEST
+
+export const putAllReviews = (reviews) => {
+    return async dispatch => {
+        try {
+            const res = await fetchData.putReviews(reviews)
+            if (!res.ok) new Error('data cannot be updated')
+            dispatch(putReview(res.data))
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}

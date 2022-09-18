@@ -11,6 +11,7 @@ import Blogs from "./frontend/pages/blogs/Blogs";
 import Doctors from "./frontend/pages/doctors/Doctors";
 import Footer from "./frontend/pages/footer/Footer";
 import AddReview from "./frontend/pages/review/AddReview";
+import UpdateReview from "./frontend/pages/review/UpdateReview";
 //import Statistics from "./frontend/components/statistics/Statistics";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/addReview" element={<AddReview />} />
+        <Route path="/reviews/edits/:id" element={<UpdateReview />} />
       </Routes>
       <Footer />
     </div>

@@ -4,7 +4,10 @@ import {
     GET_DOCTORS,
     GET_REVIEWS,
     GET_BLOGS,
-    TOGGLE_NAVBAR
+    TOGGLE_NAVBAR,
+    POST_REVIEW,
+    PUT_REVIEW,
+    GET_SINGLE_DATA
 } from "../actions/actionType"
 
 let INITIAL_STATE = {
@@ -13,7 +16,8 @@ let INITIAL_STATE = {
     doctors: [],
     reviews: [],
     blogs: [],
-    navbar:false
+    singleData: null,
+    navbar: false,
 }
 
 const serviceReducer = (state = INITIAL_STATE, action) => {
@@ -43,11 +47,26 @@ const serviceReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 blogs: action.blogs
             }
-            case TOGGLE_NAVBAR:
-                return {
-                    ...state,
-                    navbar:action.navbar
-                }
+        case TOGGLE_NAVBAR:
+            return {
+                ...state,
+                navbar: action.navbar
+            }
+        case POST_REVIEW:
+            return {
+                ...state,
+                review: action.review
+            }
+        case PUT_REVIEW:
+            return {
+                ...state,
+                review: action.review
+            }
+        case GET_SINGLE_DATA:
+            return {
+                ...state,
+                singleData: action.singleData
+            }
         default:
             return state
     }

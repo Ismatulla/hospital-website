@@ -162,10 +162,6 @@ body {
     justify-content: center;
   }
 }
-.singleCard {
-  padding-bottom: 26rem;
-  max-height: 28rem;
-}
 
 .card-img {
   border-bottom-left-radius: 7rem;
@@ -222,3 +218,4 @@ ul > li:hover {
 .leave_review {
   margin: 4rem 0;
 }
+
