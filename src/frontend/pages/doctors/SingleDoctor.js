@@ -3,7 +3,7 @@ import Icon from '../../components/Icon';
 
 const SingleDoctor=({ facebook, instagram, linkedIn, photo, name, twitter, title })=> (
     
-        <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl lg:max-w-xs sm:w-80 sm:m-auto sm:shadow-md  md:w-90 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:shadow-inner transition-all bg-white pb-96 singleCard object-cover bg-cyan-100'>
+        <div className='lg:rounded-xl sm:rounded-xl md:rounded-xl lg:max-w-xs sm:w-96 sm:m-auto  sm:shadow-md  md:w-96 md:m-auto  lg:min-h-full lg:min-w-full text-center shadow-xl   cursor-pointer hover:shadow-inner transition-all bg-white  singleCard object-cover bg-cyan-100'>
             <div className='w-full pb-0 lg:rounded-t-xl sm:rounded-t-xl md:rounded-t-xl '>
                 <img src={photo} alt="" className='w-full h-60 object-cover lg:rounded-t-xl sm:rounded-t-xl md:rounded-t-xl ' />
             </div>

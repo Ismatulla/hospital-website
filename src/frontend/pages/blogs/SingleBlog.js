@@ -17,6 +17,7 @@ const SingleBlog = ({ description, blogger, title, date, image }) => (
                 <div className='mt-6 flex xl:justify-start lg:justify-start md:justify=center sm:justify-center sm:items-center'>
                     <Button
                         icon="fas fa-chevron-right"
+                        text='Read More'
                     />
                 </div>
             </div>

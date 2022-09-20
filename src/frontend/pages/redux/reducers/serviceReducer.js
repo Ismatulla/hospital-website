@@ -55,12 +55,12 @@ const serviceReducer = (state = INITIAL_STATE, action) => {
         case POST_REVIEW:
             return {
                 ...state,
-                review: action.review
+                reviews: action.reviews
             }
         case PUT_REVIEW:
             return {
                 ...state,
-                review: action.review
+                reviews: action.reviews
             }
         case GET_SINGLE_DATA:
             return {

@@ -27,7 +27,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/addReview" element={<AddReview />} />
-        <Route path="/reviews/edits/:id" element={<UpdateReview />} />
+        <Route path="/reviews/:id" element={<UpdateReview />} />
       </Routes>
       <Footer />
     </div>

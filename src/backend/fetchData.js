@@ -34,8 +34,8 @@ export class fetchData {
             photo: reviewData.photo
         })
     }
-    static putReviews(reviewData) {
-        let dataURL = `${this.serverURL}/reviews`
+    static putReviews(reviewData,id) {
+        let dataURL = `${this.serverURL}/reviews/${id}`
         return axios.put(dataURL, {
             name: reviewData.name,
             opinion: reviewData.opinion,

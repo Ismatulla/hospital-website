@@ -4,12 +4,12 @@ import { fetchAllReviews } from '../redux/actions/index'
 import { useSelector, useDispatch } from 'react-redux'
 import Button from '../../components/Button';
 import { Link } from 'react-router-dom';
+import Spinner from '../../components/Spinner';
 
 function Reviews() {
 
     const dispatch = useDispatch()
     const { reviews } = useSelector(state => state.serviceState)
-    
     useEffect(() => {
         dispatch(fetchAllReviews())
     }, [])
@@ -29,14 +29,14 @@ function Reviews() {
             </h1>
             <div className=' mt-24 grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6 review-cards '>
                 {
-                    reviews.map((review) => (
+                    reviews ? reviews.map((review) => (
                         <SingleReview key={review.id}
                             name={review.name}
                             opinion={review.opinion}
                             photo={review.photo}
                             id={review.id}
                         />
-                    ))
+                    )) : <Spinner />
                 }
             </div>
         </div>

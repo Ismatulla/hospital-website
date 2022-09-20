@@ -11,7 +11,7 @@ const SingleReview = ({ name, opinion, photo, id }) => (
         />
         <div className='cardBody'>
             <ReviewOpinion opinion={opinion} />
-            <Link to={`/reviews/edits/${id}`}>
+            <Link to={`/reviews/${id}`}>
                 <Button
                     text="EDIT"
                     icon='fa-solid fa-pen-to-square'

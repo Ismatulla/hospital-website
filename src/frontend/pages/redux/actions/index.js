@@ -44,13 +44,13 @@ const getSingleData = (payload) => ({
 
 export const postReview = (payload) => ({
     type: POST_REVIEW,
-    review: payload
+    reviews: payload
 })
 
 // put request//
 export const putReview = (payload) => ({
     type: PUT_REVIEW,
-    review: payload
+    reviews: payload
 })
 export const fetchServices = () => {
     return async (dispatch) => {
@@ -113,13 +113,13 @@ export const fetchNavbar = () => {
     }
 }
 
-export const fetchSingleData=(id)=>{
-    return async (dispatch)=>{
-        try{
+export const fetchSingleData = (id) => {
+    return async (dispatch) => {
+        try {
             const res = await fetchData.getSingleData(id)
-            if(!res.ok) new Error('single data cannot be got')
+            if (!res.ok) new Error('single data cannot be got')
             dispatch(getSingleData(res.data))
-        }catch(err){
+        } catch (err) {
             console.log(err);
         }
     }
@@ -140,11 +140,11 @@ export const postAallReviews = (reviews) => {
 
 // PUT REQUEST
 
-export const putAllReviews = (reviews) => {
+export const putAllReviews = (reviews,id) => {
     return async dispatch => {
         try {
-            const res = await fetchData.putReviews(reviews)
-            if (!res.ok) new Error('data cannot be updated')
+            const res = await fetchData.putReviews(reviews,id)
+            if (!res.ok)  new Error(`data cannot be updated ${res.status}`)
             dispatch(putReview(res.data))
         } catch (err) {
             console.log(err);
