@@ -2,6 +2,7 @@ import React, { useState, useId, useEffect } from 'react';
 import Button from '../../components/Button';
 import { postAallReviews } from '../redux/actions/index'
 import { useDispatch } from 'react-redux'
+import UploadInput from '../../components/UploadInput';
 
 import { storage } from '../../config/firebase';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
@@ -47,7 +48,9 @@ function AddReview() {
     })
 
   }
-
+  const uploadPhoto = (e) => {
+    setPhoto(e.target.files[e.target.files.length - 1])
+  }
   return (
     <div className='leave_review'>
       <form onSubmit={handleReview}
@@ -68,12 +71,10 @@ function AddReview() {
           className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your opinion" type="tel" name="search" id='opinion' required
 
         />
-
-        <h1 className='text-3xl text-slate-400 -mb-7'>Please upload your photo </h1>
-        <input
-          onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
-          type="file" />
-
+        <UploadInput
+          header='Add profile photo'
+          onChange={(e) => setPhoto(e.target.files[e.target.files.length - 1])}
+        />
         <div>
           <Button
             text="Add it"

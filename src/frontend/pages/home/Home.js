@@ -6,8 +6,11 @@ function Home() {
     return (
         <div className='container m-auto sm:flex-col sm: items-center  sm:pt-10 sm:justify-center sm:mt-20 md:flex-column md:mt-12 lg:flex-row md:mt-20 flex lg:justify-between lg:items-center '>
             <div className='image sm:w-56 lg:w-96 '>
+
                 <img src={doctor} alt="not found" className="lg:h-96  bg-white sm:object-contain  " />
+
             </div>
+
             <div className='content
              sm:pt-16 sm:items-center sm:jusitfy-center flex sm:flex-col md:flex-col lg:items-start  '>
                 <h1 className='lg:text-5xl lg:normal-case lg:text-start font-semibold text-cyan-500  sm:uppercase  sm:text-xl'> Stay Safe, Stay Healthy</h1>
@@ -16,6 +19,7 @@ function Home() {
                  text="Contact Us"
                  icon="fas fa-chevron-right"
                  />
+                 
             </div>
         </div>
     );

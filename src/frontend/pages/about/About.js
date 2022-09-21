@@ -3,6 +3,7 @@ import Button from '../../components/Button';
 import about from '../assets/images/about-us.jpg'
 
 const About = () => (
+    
     <div className='mt-28 mb-20 lg:px-10 sm:px-4 md:px-4'>
         <h1 className=' pb-16 lg:text-6xl sm:text-3xl font-bold text-center block'>
             <span className='text-cyan-400  '>ABOUT</span> US

@@ -71,7 +71,7 @@ const serviceReducer = (state = INITIAL_STATE, action) => {
         case DELETE_REQUEST:
             return {
                 ...state,
-                reviews: action.reviews
+                singleData: action.singleData
             }
         default:
             return state

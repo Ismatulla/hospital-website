@@ -11,6 +11,7 @@ const Book = () => {
   const [enteredDataIsValid, setEnteredDataIsValid] = useState(true)
   const [sendForm, setSendForm] = useState(false)
 
+
   const validateInput = (updateState, evts, toggleState) => {
     updateState(evts.target.value)
     evts.target.value.trim() === '' ? toggleState(false) : toggleState(true)
@@ -56,8 +57,11 @@ const Book = () => {
   }
 
   useEffect(() => {
+    setSendForm(true)
     const timer = setTimeout(() => setSendForm(false), 15000)
+    setSendForm(false)
     return () => clearTimeout(timer)
+
   }, [])
 
   return (
@@ -70,28 +74,36 @@ const Book = () => {
         </h1>
       </div>
 
-      <form onSubmit={formHandler}
+      <form
+        onSubmit={formHandler}
+
         className='flex items-center justify-center border-2 rounded-md border-cyan-400 flex-col xl:w-1/2 lg:w-1/2 xl:m-auto lg:m-auto md:w-4/5 md:m-auto sm:m-auto sm:w-4/5 gap-y-8 lg:px-16 xl:px-16 md:px-8 sm:px-8'>
 
         <h1 className='text-4xl my-4 font-semibold sm:text-center md:text-center'>Book Appoinment</h1>
 
         <input
+
           onChange={nameHandler}
           onBlur={nameInputBlurHandler}
           value={name}
+
           className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your name" type="text" name="search" />
         {!enteredValueIsValid && warningMessage('name')}
 
         <input
+
           onChange={numberHandler}
           onBlur={numberInputBlurHandler}
           value={number}
+
           className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your number" type="tel" name="search" />
         {!enteredNumberIsValid && warningMessage('number')}
 
         <input
+
           onChange={dataInputHandler}
           value={data}
+
           className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" type="date" name="search" />
         {!enteredDataIsValid && warningMessage('date')}
         <div>

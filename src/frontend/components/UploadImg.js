@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useId, useEffect } from 'react';
 import { storage } from '../../config/firebase';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
-import { v4 } from 'uuid'; import React from 'react';
-import Button from './Button';
-const [photo, setPhoto] = useState(null)
-const [imageUrls, setImageUrls] = useState([]);
-const imagesListRef = ref(storage, "images/");
+import { v4 } from 'uuid';
 
+export function UploadImg(props) {
+  const [imageUrls, setImageUrls] = useState([]);
+  const imagesListRef = ref(storage, "images/");
 
-function UploadImg() {
-  const uploadImg = () => {
-    const imgRef = ref(storage, `images/${photo.name + v4()}`)
-    uploadBytes(imgRef, photo).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then(url => {
-        setImageUrls(prev => [...prev, url])
-      })
-    })
-  }
   useEffect(() => {
     listAll(imagesListRef).then((response) => {
       response.items.forEach((item) => {
@@ -26,19 +16,22 @@ function UploadImg() {
       });
     });
   }, [])
+
+
   return (
     <div>
-      <Button
-        onClick={uploadImg}
-        type='submit'
-        text="update it"
-        icon="fa-solid fa-pen-to-square"
-      />
-      {imageUrls.map((url) => {
-        return <img src={url} />;
-      })}
+
     </div>
   );
 }
 
-export default UploadImg;
+export const imgReference = (photo) => {
+  const imgRef = ref(storage, `images/${photo.name + v4()}`)
+  uploadBytes(imgRef, photo).then((snapshot) => {
+    getDownloadURL(snapshot.ref).then(url => {
+      setImageUrls(prev => [...prev, url])
+    })
+  })
+}
+
+

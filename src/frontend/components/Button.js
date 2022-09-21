@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Button = (props) => (
+
   <button
     type={props.type}
     onClick={props.onClick}
@@ -14,6 +15,7 @@ const Button = (props) => (
 )
 
 export const DangerButton = (props) => (
+
   <button
     type={props.type}
     onClick={props.onClick}
@@ -21,6 +23,7 @@ export const DangerButton = (props) => (
   >{props.text || "Delete it "}
     <span className={`${props.icon} pl-4`} />
   </button>
+  
 )
 
 

@@ -10,6 +10,7 @@ import { v4 } from 'uuid';
 
 import Button, { DangerButton } from '../../components/Button';
 import Spinner from '../../components/Spinner';
+import UploadInput from '../../components/UploadInput';
 
 function UpdateReview() {
   const dispatch = useDispatch()
@@ -17,6 +18,9 @@ function UpdateReview() {
   const { id } = useParams()
   const [loading, setLoading] = useState(false)
   let { singleData } = useSelector(state => state.serviceState)
+  let {reviews} = useSelector(state => state.serviceState)
+  console.log(reviews);
+
   const [name, setName] = useState('')
 
   const [opinion, setOpinion] = useState('')
@@ -80,7 +84,7 @@ function UpdateReview() {
     })
     setLoading(false)
   }
-
+console.log(singleData);
   return (
     <div className=' container justify-items-center align-items-center place-items-center mx-auto my-8'>
       <div className='btn_add mt-44'>
@@ -112,11 +116,10 @@ function UpdateReview() {
               className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your opinion" type="tel" name="search" id='opinion' required
 
             />
-
-            <h1 className='text-3xl text-slate-400 -mb-7'>update your photo </h1>
-            <input
+            <UploadInput
+              header='Update profile photo'
               onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
-              type="file" />
+            />
             <div>
 
               <Button
@@ -124,9 +127,6 @@ function UpdateReview() {
                 text="update it"
                 icon="fa-solid fa-pen-to-square"
               />
-              {/* {
-                loading === true ? <Spinner /> : <img src={`${imageUrls[0]}`} alt="not found" className='w-40 h-40' />
-              } */}
             </div>
           </form>
         </div>

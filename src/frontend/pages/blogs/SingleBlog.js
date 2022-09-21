@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../../components/Button';
 
 const SingleBlog = ({ description, blogger, title, date, image }) => (
+
     <div className='border-2 border-cyan-400 rounded-xl'>
         <div className='p-6'>
             <div className='mb-6'>

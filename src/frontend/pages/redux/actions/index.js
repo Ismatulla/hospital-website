@@ -4,7 +4,6 @@ import {
     GET_DOCTORS,
     GET_REVIEWS,
     GET_BLOGS,
-    TOGGLE_NAVBAR,
     POST_REVIEW,
     PUT_REVIEW,
     GET_SINGLE_DATA,
@@ -31,10 +30,7 @@ export const getBlogs = (payload) => ({
     type: GET_BLOGS,
     blogs: payload
 })
-export const getNavbar = (payload) => ({
-    type: TOGGLE_NAVBAR,
-    navbar: payload
-})
+
 
 const getSingleData = (payload) => ({
     type: GET_SINGLE_DATA,
@@ -113,11 +109,6 @@ export const fetchAllBlogs = () => {
         } catch (err) {
             console.log(err);
         }
-    }
-}
-export const fetchNavbar = () => {
-    return (dispatch) => {
-        dispatch(getNavbar(false))
     }
 }
 

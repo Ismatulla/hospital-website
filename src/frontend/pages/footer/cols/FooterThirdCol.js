@@ -1,39 +1,14 @@
 import React from 'react'
-
+import Ui from './Ul'
 const FooterThirdCol = () => (
   <div className='follow flex justify-between flex-col items-center '>
     <h1 className='text-2xl font-semibold text-cyan-700 mb-4'>Follow Us</h1>
     <ul className='flex flex-col gap-y-3'>
-      <li >
-        <span className='px-2 inline-block'>
-          <i className="fa-brands fa-facebook-f" />
-        </span>
-        Facebook
-      </li>
-      <li>
-        <span className='px-2 inline-block'>
-          <i className="fa-brands fa-twitter" />
-        </span>
-        Twitter
-      </li>
-      <li>
-        <span className='px-2 inline-block'>
-          <i className="fa-brands fa-linkedin-in"></i>
-        </span>
-        LinkedIn
-      </li>
-      <li>
-        <span className='px-2 inline-block'>
-          <i className="fa-brands fa-instagram"></i>
-        </span>
-        Instagram
-      </li>
-      <li>
-        <span className='px-2 inline-block'>
-          <i className="fa-brands fa-pinterest"></i>
-        </span>
-        Pinterest
-      </li>
+      <Ui icon="fa-brands fa-facebook-f" text="Facebook" />
+      <Ui icon="fa-brands fa-twitter" text=" Twitter" />
+      <Ui icon="fa-brands fa-linkedin-in" text=" LinkedIn" />
+      <Ui icon="fa-brands fa-instagram" text="Instagram" />
+      <Ui icon="fa-brands fa-pinterest" text="Pinterest" />
     </ul>
   </div>
 )
