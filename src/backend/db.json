@@ -143,58 +143,22 @@
   ],
   "reviews": [
     {
-      "id": "wefwefwefwvw",
       "name": "Monica",
       "opinion": " The staff at the health check department was courteous, helpful and very attentive. I would highly recommend this hospital to anyone looking for something similar services",
-      "photo": "https://www.nicepng.com/png/detail/7-74994_free-png-doctor-png-images-transparent-doctor-images.png"
+      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Fyelp.avif4cdf32d5-4c1d-461b-964b-b5ff30803f1c?alt=media&token=238de452-646c-43fd-a102-a18205d6d961",
+      "id": "wefwefwefwvw"
     },
     {
-      "name": "boomy brian",
+      "name": "brian boomy",
       "opinion": "Dr Jessica Watson: We met Dr  Jessica Watson last month with severe cough and sputum for my father Dr Varaprasad. His way of handling patients is excellent and so soothing that the patient feels immensely confident about recovery. work hard Bob!",
-      "photo": null,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Finvestor-account.jpgc0ef0d3e-a363-41ff-a1e4-698fe2f8fdcf?alt=media&token=a1527f12-35c9-4c1d-908c-d77f78848f25",
       "id": "wqeqwdqdedfcbghfhdhg"
     },
     {
-      "name": "jessic",
-      "opinion": "good doctor ",
-      "photo": null,
-      "id": "ddddrewfbbnwrbdv"
-    },
-    {
-      "id": ":r1:",
-      "name": "healthy food",
-      "opinion": "kkkkkkkkkkkkkkkk",
-      "photo": "C:/Users/dell/OneDrive/Desktop/CV folder/jadesquare.jpg"
-    },
-    {
-      "id": "mL47G7d",
-      "name": "brian",
-      "opinion": "nonononon",
-      "photo": null
-    },
-    {
-      "name": "healthy food",
-      "opinion": "kkkkkkkk",
-      "photo": {},
-      "id": "QR7DljZ"
-    },
-    {
-      "id": "svDibQQ",
-      "name": "brian",
-      "opinion": "mmnnbb",
-      "photo": null
-    },
-    {
-      "name": "abbos",
-      "opinion": "good doctor and cares about children",
-      "photo": null,
-      "id": "Gck6sF8"
-    },
-    {
-      "name": "Doctor m",
-      "opinion": "not bad",
-      "photo": {},
-      "id": "Uocs5lQ"
+      "name": "tomato",
+      "opinion": "potato and another potato",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Fyelp.avif4cdf32d5-4c1d-461b-964b-b5ff30803f1c?alt=media&token=238de452-646c-43fd-a102-a18205d6d961",
+      "id": "zaQ64Kt"
     }
   ],
   "blogs": [

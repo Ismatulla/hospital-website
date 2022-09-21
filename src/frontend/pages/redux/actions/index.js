@@ -7,7 +7,8 @@ import {
     TOGGLE_NAVBAR,
     POST_REVIEW,
     PUT_REVIEW,
-    GET_SINGLE_DATA
+    GET_SINGLE_DATA,
+    DELETE_REQUEST
 } from "./actionType";
 import { fetchData } from "../../../../backend/fetchData";
 export const getService = (payload) => ({
@@ -52,6 +53,13 @@ export const putReview = (payload) => ({
     type: PUT_REVIEW,
     reviews: payload
 })
+
+// delete request
+export const deleteSingleReview = (payload) => ({
+    type: DELETE_REQUEST,
+    reviews: payload
+})
+
 export const fetchServices = () => {
     return async (dispatch) => {
         try {
@@ -140,14 +148,25 @@ export const postAallReviews = (reviews) => {
 
 // PUT REQUEST
 
-export const putAllReviews = (reviews,id) => {
+export const putAllReviews = (reviews, id) => {
     return async dispatch => {
         try {
-            const res = await fetchData.putReviews(reviews,id)
-            if (!res.ok)  new Error(`data cannot be updated ${res.status}`)
+            const res = await fetchData.putReviews(reviews, id)
+            if (!res.ok) new Error(`data cannot be updated ${res.status}`)
             dispatch(putReview(res.data))
         } catch (err) {
             console.log(err);
+        }
+    }
+}
+
+export const fetchDeleteRequest = (id) => {
+    return async dispatch => {
+        try {
+            const res = await fetchData.deleteReviews(id)
+            dispatch(deleteSingleReview(res.data))
+        } catch (err) {
+            console.log(err)
         }
     }
 }

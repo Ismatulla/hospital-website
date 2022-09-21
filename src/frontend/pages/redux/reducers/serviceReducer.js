@@ -7,7 +7,8 @@ import {
     TOGGLE_NAVBAR,
     POST_REVIEW,
     PUT_REVIEW,
-    GET_SINGLE_DATA
+    GET_SINGLE_DATA,
+    DELETE_REQUEST,
 } from "../actions/actionType"
 
 let INITIAL_STATE = {
@@ -66,6 +67,11 @@ const serviceReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 singleData: action.singleData
+            }
+        case DELETE_REQUEST:
+            return {
+                ...state,
+                reviews: action.reviews
             }
         default:
             return state

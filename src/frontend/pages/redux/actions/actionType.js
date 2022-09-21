@@ -6,4 +6,5 @@ export const GET_BLOGS = 'GET_BLOGS';
 export const TOGGLE_NAVBAR = 'TOGGLE_NAVBAR';
 export const POST_REVIEW = 'POST_REVIEW';
 export const PUT_REVIEW = 'PUT_REVIEW';
-export const GET_SINGLE_DATA='GET_SINGLE_DATA'
+export const GET_SINGLE_DATA = 'GET_SINGLE_DATA';
+export const DELETE_REQUEST = 'DELETE_REQUEST';

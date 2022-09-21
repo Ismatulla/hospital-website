@@ -34,12 +34,19 @@ export class fetchData {
             photo: reviewData.photo
         })
     }
-    static putReviews(reviewData,id) {
+    static putReviews(reviewData, id) {
         let dataURL = `${this.serverURL}/reviews/${id}`
         return axios.put(dataURL, {
             name: reviewData.name,
             opinion: reviewData.opinion,
             photo: reviewData.photo
         })
+    }
+    static deleteReviews(id) {
+        let dataURL = `${this.serverURL}/reviews/${id}`
+        return axios.delete(dataURL, {
+            headers: { "x-access-token": "token-value" },
+        }
+        )
     }
 }

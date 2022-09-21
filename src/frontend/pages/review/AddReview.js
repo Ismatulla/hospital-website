@@ -3,6 +3,11 @@ import Button from '../../components/Button';
 import { postAallReviews } from '../redux/actions/index'
 import { useDispatch } from 'react-redux'
 
+import { storage } from '../../config/firebase';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
+import { v4 } from 'uuid';
+
+
 function AddReview() {
   const [name, setName] = useState('')
   const [opinion, setOpinion] = useState('')
@@ -13,13 +18,33 @@ function AddReview() {
   const handleName = (e) => setName(e.target.value)
   const handleOpinion = (e) => setOpinion(e.target.value)
 
+  const [imageUrls, setImageUrls] = useState([]);
+  const imagesListRef = ref(storage, "images/");
+
+  useEffect(() => {
+    listAll(imagesListRef).then((response) => {
+      response.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+          setImageUrls((prev) => [...prev, url]);
+        });
+      });
+    });
+  }, [])
+
   const handleReview = () => {
 
     if (name.trim() === '') return
     if (opinion.trim() === '') return
-    dispatch(postAallReviews({ id: id * random, name: name, opinion: opinion, photo: photo }))
+    dispatch(postAallReviews({ id: id * random, name: name, opinion: opinion, photo: imageUrls[imageUrls.length - 1] }))
     setName('')
     setOpinion('')
+
+    const imgRef = ref(storage, `images/${photo.name + v4()}`)
+    uploadBytes(imgRef, photo).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then(url => {
+        setImageUrls(prev => [...prev, url])
+      })
+    })
 
   }
 
@@ -45,27 +70,10 @@ function AddReview() {
         />
 
         <h1 className='text-3xl text-slate-400 -mb-7'>Please upload your photo </h1>
-        {/* img upload */}
-        <div>
-          {photo && (
-            <div>
-              <img src={URL.createObjectURL(photo)} width={"120px"} alt="not found" />
-              <br />
-              <button onClick={() => setPhoto(null)}>Remove</button>
-            </div>
-          )}
-          <br />
-          <br />
-          <input
-            name="myImage"
-            type="file"
-            onChange={(e) => {
-              setPhoto(e.target.files[0])
-            }}
-          />
+        <input
+          onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
+          type="file" />
 
-        </div>
-        {/* ///////////////////////////////////////// */}
         <div>
           <Button
             text="Add it"

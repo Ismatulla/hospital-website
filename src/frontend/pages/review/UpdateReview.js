@@ -1,59 +1,100 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { fetchSingleData } from '../redux/actions/index'
+import { fetchSingleData, fetchDeleteRequest } from '../redux/actions/index'
 import { putAllReviews } from '../redux/actions/index';
+import { storage } from '../../config/firebase';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
+import { v4 } from 'uuid';
 
-import Button from '../../components/Button';
+import Button, { DangerButton } from '../../components/Button';
 import Spinner from '../../components/Spinner';
 
 function UpdateReview() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { id } = useParams()
-
+  const [loading, setLoading] = useState(false)
   let { singleData } = useSelector(state => state.serviceState)
   const [name, setName] = useState('')
+
   const [opinion, setOpinion] = useState('')
+
+
   const [photo, setPhoto] = useState(null)
+  const [imageUrls, setImageUrls] = useState([]);
+  const imagesListRef = ref(storage, "images/");
+
   const handleName = (e) => setName(e.target.value)
 
   const handleOpinion = (e) => setOpinion(e.target.value)
 
-  const handleReview = (e) => {
-    e.preventDefault()
+  const deleteData = () => {
+    alert('are you sure you want to delete!')
+    setLoading(true)
+    dispatch(fetchDeleteRequest(id))
+    navigate('/reviews')
+    setLoading(false)
+
+  }
+
+  useEffect(() => {
+    setLoading(true)
+    dispatch(fetchSingleData(id))
+    setLoading(false)
+  }, [id])
+
+  useEffect(() => {
+    setLoading(true)
+    setName(singleData?.name)
+    setOpinion(singleData?.opinion)
+    setLoading(false)
+  }, [singleData])
+
+  useEffect(() => {
+    listAll(imagesListRef).then((response) => {
+      response.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+          setImageUrls((prev) => [...prev, url]);
+        });
+      });
+    });
+  }, [])
+
+
+  const handleReview = () => {
+    if (photo === null) return
+    setLoading(true)
     dispatch(putAllReviews({
       ...singleData,
       name: name,
       opinion: opinion,
-      photo: photo
+      photo: imageUrls[imageUrls.length - 1]
     }, id))
-  }
-
-  useEffect(() => {
-    dispatch(fetchSingleData(id))
-  }, [id])
-
-  useEffect(() => {
-    setName(singleData?.name)
-    setOpinion(singleData?.opinion)
-  }, [singleData])
-
-  const uploadImg = () => {
-    const formData = new FormData()
-    formData.append("flie", photo)
-    formData.append("upload_preset", "v0x7gguk")
-    axios.post("https://api.cloudinary.com/v1_1./dczub3u51/image/upolad",
-       formData).then(res => console.log(res))
+    const imgRef = ref(storage, `images/${photo.name + v4()}`)
+    uploadBytes(imgRef, photo).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then(url => {
+        setImageUrls(prev => [...prev, url])
+      })
+    })
+    setLoading(false)
   }
 
   return (
     <div className=' container justify-items-center align-items-center place-items-center mx-auto my-8'>
-      {singleData === null ? <Spinner /> : (
+      <div className='btn_add mt-44'>
+        <DangerButton
+          type="submit"
+          onClick={deleteData}
+          text='Delete Review'
+          icon="fa-solid fa-trash" />
+      </div>
+      {loading === true ? <Spinner /> : (
         <div className='leave_review'>
           <form
             onSubmit={handleReview}
-
+            action="/reviews"
             method='PUT'
             className='flex items-center justify-center border-2 rounded-md border-cyan-400 flex-col xl:w-1/2 lg:w-1/2 xl:m-auto lg:m-auto md:w-4/5 md:m-auto sm:m-auto  gap-y-8 lg:px-16 xl:px-16 md:px-8 sm:px-8 '>
 
@@ -74,15 +115,18 @@ function UpdateReview() {
 
             <h1 className='text-3xl text-slate-400 -mb-7'>update your photo </h1>
             <input
-              onChange={e => setPhoto(e.target.files[0])}
-              type="file" name="" id="" />
+              onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
+              type="file" />
             <div>
+
               <Button
-                onClick={uploadImg}
                 type='submit'
                 text="update it"
                 icon="fa-solid fa-pen-to-square"
               />
+              {/* {
+                loading === true ? <Spinner /> : <img src={`${imageUrls[0]}`} alt="not found" className='w-40 h-40' />
+              } */}
             </div>
           </form>
         </div>

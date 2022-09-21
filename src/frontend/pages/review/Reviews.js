@@ -4,12 +4,12 @@ import { fetchAllReviews } from '../redux/actions/index'
 import { useSelector, useDispatch } from 'react-redux'
 import Button from '../../components/Button';
 import { Link } from 'react-router-dom';
-import Spinner from '../../components/Spinner';
 
 function Reviews() {
 
     const dispatch = useDispatch()
     const { reviews } = useSelector(state => state.serviceState)
+
     useEffect(() => {
         dispatch(fetchAllReviews())
     }, [])
@@ -36,7 +36,7 @@ function Reviews() {
                             photo={review.photo}
                             id={review.id}
                         />
-                    )) : <Spinner />
+                    )) : <h1 className='text-cyan-500 mt-auto text-4xl'>There is no Reviews </h1>
                 }
             </div>
         </div>
