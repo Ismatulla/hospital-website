@@ -1,58 +1,52 @@
-import React, { useState, useId, useEffect } from 'react';
+import React, { useState, useId, } from 'react';
+import Spinner from '../../components/Spinner'
 import Button from '../../components/Button';
 import { postAallReviews } from '../redux/actions/index'
 import { useDispatch } from 'react-redux'
-
-import { storage } from '../../config/firebase';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
-import { v4 } from 'uuid';
+import axios from 'axios';
 
 
 function AddReview() {
   const [name, setName] = useState('')
   const [opinion, setOpinion] = useState('')
   const [photo, setPhoto] = useState(null)
+  const [imgURL, setimgURL] = useState('')
+  const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
   const id = useId()
   const random = Math.random() * 10
   const handleName = (e) => setName(e.target.value)
   const handleOpinion = (e) => setOpinion(e.target.value)
 
-  const [imageUrls, setImageUrls] = useState([]);
-  const imagesListRef = ref(storage, "images/");
+  const uploadPhoto = () => {
+    setLoading(true)
+    if (photo === null) return
+    const formData = new FormData()
+    formData.append("file", photo)
+    formData.append("upload_preset", "ofwttnqh")
+    axios.post("https://api.cloudinary.com/v1_1/dhkmvhsre/image/upload", formData).then(res => setimgURL(res?.data?.secure_url))
+    console.log(imgURL);
+    console.log(photo);
+    console.log('clicked');
+    setLoading(false)
+  }
 
-  useEffect(() => {
-    listAll(imagesListRef).then((response) => {
-      response.items.forEach((item) => {
-        getDownloadURL(item).then((url) => {
-          setImageUrls((prev) => [...prev, url]);
-        });
-      });
-    });
-  }, [])
-
-  const handleReview = () => {
-
+  const handleReview = (e) => {
+    e.preventDefault()
     if (name.trim() === '') return
     if (opinion.trim() === '') return
-    dispatch(postAallReviews({ id: id * random, name: name, opinion: opinion, photo: imageUrls[imageUrls.length - 1] }))
+    dispatch(postAallReviews({ id: id * random, name: name, opinion: opinion, photo: imgURL }))
     setName('')
     setOpinion('')
+    uploadPhoto()
+    console.log('submitted');
+  }
 
-    const imgRef = ref(storage, `images/${photo.name + v4()}`)
-    uploadBytes(imgRef, photo).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then(url => {
-        setImageUrls(prev => [...prev, url])
-      })
-    })
-  }
-  const uploadPhoto = (e) => {
-    setPhoto(e.target.files[e.target.files.length - 1])
-  }
   return (
     <div className='leave_review'>
-      <form onSubmit={handleReview}
-        action='/reviews'
+      <form
+        type="POST"
+        onSubmit={handleReview}
         className='flex items-center justify-center border-2 rounded-md border-cyan-400 flex-col xl:w-1/2 lg:w-1/2 xl:m-auto lg:m-auto md:w-4/5 md:m-auto sm:m-auto sm:w-4/5 gap-y-8 lg:px-16 xl:px-16 md:px-8 sm:px-8 '>
 
         <h1 className='text-4xl my-4 font-semibold sm:text-center md:text-center'>Leave Review</h1>
@@ -72,9 +66,10 @@ function AddReview() {
         <h1 className='text-3xl text-cyan-400'>Add profile photo</h1>
         <label
           className="block"
-          onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
         >
-          <input type="file"
+          <input
+            onChange={(e) => setPhoto(e.target.files[0])}
+            type="file"
             className="block w-full text-sm text-slate-500
       file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
@@ -85,8 +80,10 @@ function AddReview() {
         </label>
         <div>
           <Button
-            text="Add it"
+            onClick={uploadPhoto}
+            text="Add rewiev"
             icon="fa-solid fa-plus"
+            type="submit"
           />
         </div>
       </form>

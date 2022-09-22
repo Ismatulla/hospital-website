@@ -143,28 +143,16 @@
   ],
   "reviews": [
     {
-      "name": "Monica",
+      "name": "Monica Magyar",
       "opinion": " The staff at the health check department was courteous, helpful and very attentive. I would highly recommend this hospital to anyone looking for something similar services",
-      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Fyelp.avif4cdf32d5-4c1d-461b-964b-b5ff30803f1c?alt=media&token=238de452-646c-43fd-a102-a18205d6d961",
+      "photo": "https://res.cloudinary.com/dhkmvhsre/image/upload/v1663886126/hospital_img/eawkai5otuw2eyzb0hyg.avif",
       "id": "wefwefwefwvw"
     },
     {
       "name": "Doctor Watson",
       "opinion": "Dr Jessica Watson: We met Dr Jessica Watson last month with severe cough and sputum for my father Dr Varaprasad. His way of handling patients is excellent and so soothing that the patient feels immensely confident about recovery. work hard Bob!",
-      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Fimg1.avifcf1b2008-4f09-4aa3-a244-c0992befc093?alt=media&token=3b5df0f4-21e2-4f05-815b-45e4b392d78c",
+      "photo": "https://res.cloudinary.com/dhkmvhsre/image/upload/v1663886126/hospital_img/eawkai5otuw2eyzb0hyg.avif",
       "id": "LCaC_sv"
-    },
-    {
-      "id": "AaNeXqp",
-      "name": "healthy food",
-      "opinion": "lorem ipsum",
-      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Fimg1.avif86fa16a6-73f0-4a6f-b951-e8b5fea29d70?alt=media&token=9418fb60-e39a-4e19-97d4-ba951e8c3f35"
-    },
-    {
-      "id": "AVzc0NL",
-      "name": "healthy food",
-      "opinion": "zdsdcsdvsvdfvdfbdg",
-      "photo": "https://firebasestorage.googleapis.com/v0/b/hospital-image.appspot.com/o/images%2Fensoit.figma.jpg76627ff4-52ff-4a11-b5fa-fd61c0deede2?alt=media&token=6576c79e-6acb-4073-bbe9-3b31b057e5ce"
     }
   ],
   "blogs": [

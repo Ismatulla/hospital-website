@@ -4,13 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchSingleData, fetchDeleteRequest } from '../redux/actions/index'
 import { putAllReviews } from '../redux/actions/index';
-import { storage } from '../../config/firebase';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
-import { v4 } from 'uuid';
+
 
 import Button, { DangerButton } from '../../components/Button';
 import Spinner from '../../components/Spinner';
-import UploadInput from '../../components/UploadInput';
+import axios from 'axios';
 
 function UpdateReview() {
   const dispatch = useDispatch()
@@ -20,13 +18,9 @@ function UpdateReview() {
   let { singleData } = useSelector(state => state.serviceState)
 
   const [name, setName] = useState('')
-
   const [opinion, setOpinion] = useState('')
-
-
   const [photo, setPhoto] = useState(null)
-  const [imageUrls, setImageUrls] = useState([]);
-  const imagesListRef = ref(storage, "images/");
+  const [imgURL, setImgURL] = useState('')
 
   const handleName = (e) => setName(e.target.value)
 
@@ -54,35 +48,35 @@ function UpdateReview() {
     setLoading(false)
   }, [singleData])
 
-  useEffect(() => {
-    listAll(imagesListRef).then((response) => {
-      response.items.forEach((item) => {
-        getDownloadURL(item).then((url) => {
-          setImageUrls((prev) => [...prev, url]);
-        });
-      });
-    });
-  }, [])
+  const uploadPhoto = (e) => {
+    setLoading(true)
+    if (photo === null) return
+    const formData = new FormData()
+    formData.append("file", photo)
+    formData.append("upload_preset", "ofwttnqh")
+    axios
+      .post("https://api.cloudinary.com/v1_1/dhkmvhsre/image/upload", formData)
+      .then(res => {
+        setImgURL(res?.data?.secure_url)
+      }
+      )
+    setLoading(false)
+  }
 
-
-  const handleReview = () => {
+  const handleReview = (e) => {
+    e.preventDefault()
     if (photo === null) return
     setLoading(true)
+    uploadPhoto()
     dispatch(putAllReviews({
       ...singleData,
       name: name,
       opinion: opinion,
-      photo: imageUrls[imageUrls.length - 1]
+      photo: 'https://res.cloudinary.com/dhkmvhsre/image/upload/v1663886170/hospital_img/lolznqisora4cbd8h7fy.avif'
     }, id))
-    const imgRef = ref(storage, `images/${photo.name + v4()}`)
-    uploadBytes(imgRef, photo).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then(url => {
-        setImageUrls(prev => [...prev, url])
-      })
-    })
     setLoading(false)
   }
-
+  console.log(imgURL);
   return (
     <div className=' container justify-items-center align-items-center place-items-center mx-auto my-8'>
       <div className='btn_add mt-44'>
@@ -96,7 +90,7 @@ function UpdateReview() {
         <div className='leave_review'>
           <form
             onSubmit={handleReview}
-            action="/reviews"
+
             method='PUT'
             className='flex items-center justify-center border-2 rounded-md border-cyan-400 flex-col xl:w-1/2 lg:w-1/2 xl:m-auto lg:m-auto md:w-4/5 md:m-auto sm:m-auto  gap-y-8 lg:px-16 xl:px-16 md:px-8 sm:px-8 '>
 
@@ -114,13 +108,14 @@ function UpdateReview() {
               className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your opinion" type="tel" name="search" id='opinion' required
 
             />
-        
+
             <h1 className='text-3xl text-cyan-400'>Update profile photo</h1>
             <label
               className="block"
-              onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
             >
-              <input type="file"
+              <input
+                onChange={(e) => setPhoto(e.target.files[0])}
+                type="file"
                 className="block w-full text-sm text-slate-500
       file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
@@ -131,7 +126,7 @@ function UpdateReview() {
             </label>
             <div>
 
-              <Button
+              <Button onClick={uploadPhoto}
                 type='submit'
                 text="update it"
                 icon="fa-solid fa-pen-to-square"
