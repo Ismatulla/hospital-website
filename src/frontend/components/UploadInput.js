@@ -1,6 +1,7 @@
 import React from 'react';
 
 function UploadInput(props) {
+  
   return (
     <>
       <h1 className='text-3xl text-cyan-400'>{`${props.header}`}</h1>

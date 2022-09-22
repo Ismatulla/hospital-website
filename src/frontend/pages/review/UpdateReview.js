@@ -18,8 +18,6 @@ function UpdateReview() {
   const { id } = useParams()
   const [loading, setLoading] = useState(false)
   let { singleData } = useSelector(state => state.serviceState)
-  let {reviews} = useSelector(state => state.serviceState)
-  console.log(reviews);
 
   const [name, setName] = useState('')
 
@@ -84,7 +82,7 @@ function UpdateReview() {
     })
     setLoading(false)
   }
-console.log(singleData);
+
   return (
     <div className=' container justify-items-center align-items-center place-items-center mx-auto my-8'>
       <div className='btn_add mt-44'>
@@ -116,10 +114,21 @@ console.log(singleData);
               className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your opinion" type="tel" name="search" id='opinion' required
 
             />
-            <UploadInput
-              header='Update profile photo'
+        
+            <h1 className='text-3xl text-cyan-400'>Update profile photo</h1>
+            <label
+              className="block"
               onChange={e => setPhoto(e.target.files[e.target.files.length - 1])}
-            />
+            >
+              <input type="file"
+                className="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+            </label>
             <div>
 
               <Button
