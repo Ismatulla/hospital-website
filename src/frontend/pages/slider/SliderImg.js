@@ -13,7 +13,7 @@ function SliderImg() {
         autoplay: true,
         autoplaySpeed: 5000,
         cssEase: "linear",
-        arrows:false,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1024,
@@ -27,7 +27,7 @@ function SliderImg() {
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow:2,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: false
@@ -39,7 +39,7 @@ function SliderImg() {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 1,
-                    dots:false,
+                    dots: false,
                 }
             },
             {
@@ -47,27 +47,27 @@ function SliderImg() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots:false,
+                    dots: false,
                 }
             }
         ]
     };
 
     return (
-            <Slider {...settings} className="-z-10">
-                <div>
-                    <img src={slider1} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
-                </div>
-                <div>
-                    <img src={slider2} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
-                </div>
-                <div>
-                    <img src={slider3} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
-                </div>
-                <div>
-                    <img src={slider4} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
-                </div>
-            </Slider>
+        <Slider {...settings} className="-z-10">
+            <div>
+                <img src={slider1} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50  " />
+            </div>
+            <div>
+                <img src={slider2} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
+            </div>
+            <div>
+                <img src={slider3} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
+            </div>
+            <div>
+                <img src={slider4} alt="" className=" lg:w-full md:w-full opacity-75 brightness-50 " />
+            </div>
+        </Slider>
     );
 }
 

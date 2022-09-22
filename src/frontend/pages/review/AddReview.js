@@ -2,7 +2,6 @@ import React, { useState, useId, useEffect } from 'react';
 import Button from '../../components/Button';
 import { postAallReviews } from '../redux/actions/index'
 import { useDispatch } from 'react-redux'
-import UploadInput from '../../components/UploadInput';
 
 import { storage } from '../../config/firebase';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
@@ -46,7 +45,6 @@ function AddReview() {
         setImageUrls(prev => [...prev, url])
       })
     })
-
   }
   const uploadPhoto = (e) => {
     setPhoto(e.target.files[e.target.files.length - 1])
