@@ -6,7 +6,7 @@ import {
     GET_BLOGS,
     DISPATCH_DATA,
 } from "./actionType";
-import { fetchData } from "../../../../backend/fetchData";
+import {fetchData} from '../../../../backend/fetchData'
 export const getService = (payload) => ({
     type: SERVICE_AVAILABLE,
     service: payload
