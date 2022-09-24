@@ -7,11 +7,11 @@ const ReviewCard = ({ name, photo }) => (
     </div>
     <h1 className='lg:text-4xl md:text-3xl sm:text-3xl pt-6 font-semibold py-4 text-cyan-700'>{name}</h1>
     <div className='flex gap-2 justify-center pb-4'>
-      <i className="fa-solid fa-star text-white"></i>
-      <i className="fa-solid fa-star text-white"></i>
-      <i className="fa-solid fa-star-half-stroke text-white"></i>
-      <i className="fa-solid fa-star text-white"></i>
-      <i className="fa-solid fa-star text-white"></i>
+      <i className="fa-solid fa-star text-white" />
+      <i className="fa-solid fa-star text-white" />
+      <i className="fa-solid fa-star-half-stroke text-white" />
+      <i className="fa-solid fa-star text-white" />
+      <i className="fa-solid fa-star text-white" />
     </div>
   </div>
 );

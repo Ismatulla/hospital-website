@@ -48,35 +48,29 @@ function UpdateReview() {
     setLoading(false)
   }, [singleData])
 
-  const uploadPhoto = (e) => {
-    setLoading(true)
-    if (photo === null) return
+  const uploadPhoto = () => {
+    if (imgURL === '') return
     const formData = new FormData()
-    formData.append("file", photo)
+    formData.append("file", imgURL)
     formData.append("upload_preset", "ofwttnqh")
     axios
       .post("https://api.cloudinary.com/v1_1/dhkmvhsre/image/upload", formData)
-      .then(res => {
-        setImgURL(res?.data?.secure_url)
-      }
-      )
-    setLoading(false)
-  }
+      .then(res => setPhoto(res?.data?.secure_url))
 
-  const handleReview = (e) => {
-    e.preventDefault()
-    if (photo === null) return
+  }
+  uploadPhoto()
+  const handleReview = () => {
+
     setLoading(true)
-    uploadPhoto()
     dispatch(putAllReviews({
       ...singleData,
       name: name,
       opinion: opinion,
-      photo: 'https://res.cloudinary.com/dhkmvhsre/image/upload/v1663886170/hospital_img/lolznqisora4cbd8h7fy.avif'
+      photo: photo
     }, id))
     setLoading(false)
   }
-  console.log(imgURL);
+
   return (
     <div className=' container justify-items-center align-items-center place-items-center mx-auto my-8'>
       <div className='btn_add mt-44'>
@@ -89,11 +83,10 @@ function UpdateReview() {
       {loading === true ? <Spinner /> : (
         <div className='leave_review'>
           <form
+            action='/reviews'
             onSubmit={handleReview}
-
             method='PUT'
             className='flex items-center justify-center border-2 rounded-md border-cyan-400 flex-col xl:w-1/2 lg:w-1/2 xl:m-auto lg:m-auto md:w-4/5 md:m-auto sm:m-auto  gap-y-8 lg:px-16 xl:px-16 md:px-8 sm:px-8 '>
-
             <h1 className='text-4xl my-4 font-semibold sm:text-center md:text-center'>Update your review</h1>
 
             <input
@@ -108,29 +101,28 @@ function UpdateReview() {
               className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border-2 border-cyan-400 rounded-md py-2 pl-9 pr-3 focus:outline-none   sm:text-sm" placeholder="your opinion" type="tel" name="search" id='opinion' required
 
             />
-
             <h1 className='text-3xl text-cyan-400'>Update profile photo</h1>
-            <label
-              className="block"
-            >
+            <label className="block">
               <input
-                onChange={(e) => setPhoto(e.target.files[0])}
+                required
+                onChange={(e) => setImgURL(e.target.files[0])}
                 type="file"
-                className="block w-full text-sm text-slate-500
+                className="
+      block w-full text-sm text-slate-500
       file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
       file:text-sm file:font-semibold
       file:bg-violet-50 file:text-violet-700
-      hover:file:bg-violet-100
-    "/>
+      hover:file:bg-violet-100 "/>
             </label>
             <div>
-
               <Button onClick={uploadPhoto}
                 type='submit'
                 text="update it"
                 icon="fa-solid fa-pen-to-square"
               />
+              <img src={photo} alt="not uploaded yet" className='h-40 mb-4' />
+
             </div>
           </form>
         </div>

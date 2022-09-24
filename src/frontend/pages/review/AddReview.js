@@ -19,32 +19,28 @@ function AddReview() {
   const handleOpinion = (e) => setOpinion(e.target.value)
 
   const uploadPhoto = () => {
-    setLoading(true)
     if (photo === null) return
     const formData = new FormData()
     formData.append("file", photo)
     formData.append("upload_preset", "ofwttnqh")
     axios.post("https://api.cloudinary.com/v1_1/dhkmvhsre/image/upload", formData).then(res => setimgURL(res?.data?.secure_url))
-    console.log(imgURL);
-    console.log(photo);
-    console.log('clicked');
-    setLoading(false)
-  }
 
-  const handleReview = (e) => {
-    e.preventDefault()
+  }
+  uploadPhoto()
+  const handleReview = () => {
+
     if (name.trim() === '') return
     if (opinion.trim() === '') return
     dispatch(postAallReviews({ id: id * random, name: name, opinion: opinion, photo: imgURL }))
     setName('')
     setOpinion('')
     uploadPhoto()
-    console.log('submitted');
   }
 
   return (
     <div className='leave_review'>
       <form
+        action='/reviews'
         type="POST"
         onSubmit={handleReview}
         className='flex items-center justify-center border-2 rounded-md border-cyan-400 flex-col xl:w-1/2 lg:w-1/2 xl:m-auto lg:m-auto md:w-4/5 md:m-auto sm:m-auto sm:w-4/5 gap-y-8 lg:px-16 xl:px-16 md:px-8 sm:px-8 '>
@@ -70,6 +66,7 @@ function AddReview() {
           <input
             onChange={(e) => setPhoto(e.target.files[0])}
             type="file"
+            required
             className="block w-full text-sm text-slate-500
       file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
@@ -85,6 +82,7 @@ function AddReview() {
             icon="fa-solid fa-plus"
             type="submit"
           />
+          <img src={imgURL} alt="not uploaded yet" className='h-40 mb-4' />
         </div>
       </form>
     </div>
